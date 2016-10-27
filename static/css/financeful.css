@@ -1,11 +1,15 @@
-.jumbotron {
+* {
   text-align: center;
-  background-color: gold;
-  background-image: 
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.jumbotron p {
+/*.jumbotron p {
 	text-align: center;
 	background-color: red;
-	border-style: solid;
-}
+	border-style: solid
+	border
+	background-image: url("background.jpg");
+}*/
