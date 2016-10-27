@@ -1,23 +1,38 @@
 html,
 body {
+    background-image: url("greenbg.jpg");	
 	width: 100%;
 	height: 100%;
 	margin: 0;
 }
 
 
-* {
+.add {
+	border-style: solid;
+	font-size: 100px;
+	background-color: gold;
+	text-align: center;
+	color: black;
+}
+
+a {
+	color: black;
+}
+/** {
   background-image: url("greenbg.jpg");	
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
-body {
-	font-size: 100px;
+
+body p {
+	font-size: 150px;
+	color: black;
 	text-align: center;
 	font-weight: bold;
 }
+
 
 /*.jumbotron p {
 	text-align: center;
