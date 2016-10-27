@@ -1,11 +1,11 @@
 * {
   text-align: center;
   background-image: url("greenbg.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
-  margin: auto;
-  background-size: 100%;
+  background-size: cover;
+  height:100vh;
 }
 
 /*.jumbotron p {
