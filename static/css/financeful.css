@@ -1,3 +1,11 @@
-* {
+.jumbotron {
   text-align: center;
+  background-color: gold;
+  background-image: 
+}
+
+.jumbotron p {
+	text-align: center;
+	background-color: red;
+	border-style: solid;
 }
