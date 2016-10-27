@@ -5,7 +5,7 @@
   background-attachment: fixed;
   background-position: center;
   margin: auto;
-  background-size: cover
+  background-size: 100%;
 }
 
 /*.jumbotron p {
