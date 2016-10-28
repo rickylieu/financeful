@@ -58,7 +58,6 @@ body p {
     display: inline-block; 
     margin: auto;
         padding-top: 100px;
-        padding-left: 40px;
 }
 
 
@@ -69,7 +68,6 @@ body p {
     font-size: 50px;
     margin: auto;
     padding-top: 100px;
-      padding-left: 40px;
 }
 
 .amount label, .amount input {
@@ -79,7 +77,6 @@ body p {
     font-size: 50px; 
     margin: auto;
         padding-top: 100px;
-          padding-left: 40px;
 }
 
 .date label, .date input {
@@ -89,7 +86,6 @@ body p {
     display: inline-block; 
     margin: auto;
         padding-top: 100px;
-          padding-left: 40px;
 }
 
 
