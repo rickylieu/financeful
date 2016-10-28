@@ -50,10 +50,12 @@ body p {
 	font-weight: bold;
 }
 
-.input p{
-	font-size: 100px;
+.input{
+	font-size: 75px;
 	text-align: left;
+
 }
+
 
 
 /*.jumbotron p {
