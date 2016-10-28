@@ -52,11 +52,10 @@ body p {
 
 
 .item label, .item input {
-	font-size: 75px;
     float: none; 
     font-size: 50px;
     display: inline-block; 
-    margin: 200px;
+    margin: auto;
     padding-top: 100px;
 }
 
@@ -65,7 +64,7 @@ body p {
     float: none; 
     display: inline-block;
     font-size: 50px;
-    margin: 200px;
+    margin: auto;
     padding-top: 100px;
 }
 
@@ -74,18 +73,18 @@ body p {
     float: none; 
     display: inline-block;
     font-size: 50px; 
-    margin: 200px;
+    margin: auto;
     padding-top: 100px;
 }
 
-.category select, option { width: 400px; height:  150px; }
+.category select, option { width: 100px; height:  100px; }
 
 .date label, .date input {
 	font-size: 75px;
     float: none; 
     font-size: 50px;
     display: inline-block; 
-    margin: 200px;
+    margin: auto;
         padding-top: 100px;
 }
 
