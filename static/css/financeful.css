@@ -50,10 +50,34 @@ body p {
 	font-weight: bold;
 }
 
-.input{
-	font-size: 75px;
-	text-align: left;
 
+.item label, .item input {
+    float: none; 
+    display: inline-block; 
+    padding-left:  80px;
+    padding-right:  80px;  
+}
+
+
+.category label, .category input {
+    float: none; 
+    display: inline-block;
+    padding-left:  80px;
+    padding-right:  80px;   
+}
+
+.amount label, .amount input {
+    float: none; 
+    display: inline-block;    
+    padding-left:  80px;
+    padding-right:  80px;
+}
+
+.date label, .date input {
+    float: none; 
+    display: inline-block;   
+    padding-left:  80px;
+    padding-right:  80px;
 }
 
 
