@@ -20,6 +20,11 @@ body {
 	color: black;
 }
 
+.menu h1{
+	font-size: 75px;
+	font-weight: bold
+}
+
 
 a {
 	color: black;
@@ -31,7 +36,12 @@ a {
   background-size: cover;
 }*/
 
-
+table, th, td {
+	text-align: center;
+	font-size: 150px;
+	border: 3px solid black;
+	background-color: gold;
+}
 body p {
 	font-size: 150px;
 	color: white;
