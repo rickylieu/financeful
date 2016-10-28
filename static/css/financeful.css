@@ -68,7 +68,7 @@ body p {
     padding-top: 100px;
 }
 
-.amount label, .amount input {
+.amount label{
 	font-size: 75px;
     float: none; 
     display: inline-block;
@@ -77,9 +77,24 @@ body p {
     padding-top: 100px;
 }
 
-.category select, option { width: 100px; height:  100px; }
+.category select, option { width: 100px; height:  100px;     text-align:  center;
 
-.date label, .date input {
+.item input {
+    width: 100px; height:  100px;
+    text-align:  center;
+}
+
+.amount input {
+width: 100px; height:  100px;
+    text-align:  center;
+}
+
+.date input {
+width: 100px; height:  100px;
+    text-align:  center;
+}
+
+.date label{
 	font-size: 75px;
     float: none; 
     font-size: 50px;
