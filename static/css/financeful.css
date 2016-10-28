@@ -96,27 +96,28 @@ body p {
     width: 100px; 
     height:  100px;    
      text-align:center;
-      padding-left: 100px;
+      padding-left: 400px;
           margin-left: 100px; 
 }
 
 .item input {
     width: 100px; height:  100px;
     text-align:  center;
-    padding-left: 100px;
+    padding-left: 400px;
         margin-left: 100px; 
 }
 
 .amount input {
 width: 100px; height:  100px;
     text-align:  center;
+        padding-left: 400px;
     margin-left: 100px; 
 }
 
 .date input {
 width: 100px; height:  100px;
     text-align:  center;
-    padding-left: 100px;
+    padding-left: 400px;
         margin-left: 100px; 
 }
 
