@@ -56,11 +56,7 @@ body p {
     float: none; 
     font-size: 50px;
     display: inline-block; 
-    padding-left:  40px;
-    padding-right:  40px;  
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin: 20px
+    margin: auto;
 }
 
 
@@ -69,11 +65,7 @@ body p {
     float: none; 
     display: inline-block;
     font-size: 50px;
-    padding-left:  40px;
-    padding-right:  40px;  
-    padding-top: 40px;
-    padding-bottom: 40px; 
-    margin: 20px
+    margin: auto;
 }
 
 .amount label, .amount input {
@@ -81,11 +73,7 @@ body p {
     float: none; 
     display: inline-block;
     font-size: 50px; 
-    padding-left:  40px;
-    padding-right:  40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin: 12px
+    margin: auto;
 }
 
 .date label, .date input {
@@ -93,11 +81,7 @@ body p {
     float: none; 
     font-size: 50px;
     display: inline-block; 
-    padding-left:  40px;
-    padding-right:  40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin: 20px
+    margin: auto;
 }
 
 
