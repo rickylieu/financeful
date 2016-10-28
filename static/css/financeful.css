@@ -52,6 +52,7 @@ body p {
 
 
 .item label, .item input {
+	font-size: 75px;
     float: none; 
     font-size: 50px;
     display: inline-block; 
@@ -64,6 +65,7 @@ body p {
 
 
 .category label, .category input {
+	font-size: 75px;
     float: none; 
     display: inline-block;
     font-size: 50px;
@@ -75,6 +77,7 @@ body p {
 }
 
 .amount label, .amount input {
+	font-size: 75px;
     float: none; 
     display: inline-block;
     font-size: 50px; 
@@ -86,6 +89,7 @@ body p {
 }
 
 .date label, .date input {
+	font-size: 75px;
     float: none; 
     font-size: 50px;
     display: inline-block; 
