@@ -95,45 +95,32 @@ body p {
 .category select, option { 
     width: 300px; 
     height:  50px;    
-<<<<<<< HEAD
      text-align:center;
-=======
       padding-left: 300px;
->>>>>>> 3fda9fe9c593d3417b1ac5b013ee386fd4bde170
           margin-left: 500px; 
 }
 
 .item input {
-<<<<<<< HEAD
     width: 350px; height:  50px;
     text-align:  center;
-=======
     width: 100px; height:  50px;
-
     padding-left: 300px;
->>>>>>> 3fda9fe9c593d3417b1ac5b013ee386fd4bde170
     margin-left: 500px; 
 }
 
 .amount input {
-<<<<<<< HEAD
 width: 350px; height:  50px;
     text-align:  center;
-=======
 width: 100px; height:  50px;
     padding-left: 300px;
->>>>>>> 3fda9fe9c593d3417b1ac5b013ee386fd4bde170
     margin-left: 500px; 
 }
 
 .date input {
-<<<<<<< HEAD
 width: 350px; height:  50px;
     text-align:  center;
-=======
 width: 100px; height:  50px;
     padding-left: 300px;
->>>>>>> 3fda9fe9c593d3417b1ac5b013ee386fd4bde170
         margin-left: 500px; 
 }
 
