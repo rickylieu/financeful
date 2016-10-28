@@ -53,31 +53,47 @@ body p {
 
 .item label, .item input {
     float: none; 
+    font-size: 50px;
     display: inline-block; 
-    padding-left:  80px;
-    padding-right:  80px;  
+    padding-left:  40px;
+    padding-right:  40px;  
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 20px
 }
 
 
 .category label, .category input {
     float: none; 
     display: inline-block;
-    padding-left:  80px;
-    padding-right:  80px;   
+    font-size: 50px;
+    padding-left:  40px;
+    padding-right:  40px;  
+    padding-top: 40px;
+    padding-bottom: 40px; 
+    margin: 20px
 }
 
 .amount label, .amount input {
     float: none; 
-    display: inline-block;    
-    padding-left:  80px;
-    padding-right:  80px;
+    display: inline-block;
+    font-size: 50px; 
+    padding-left:  40px;
+    padding-right:  40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 12px
 }
 
 .date label, .date input {
     float: none; 
-    display: inline-block;   
-    padding-left:  80px;
-    padding-right:  80px;
+    font-size: 50px;
+    display: inline-block; 
+    padding-left:  40px;
+    padding-right:  40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 20px
 }
 
 
