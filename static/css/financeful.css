@@ -97,7 +97,7 @@ body p {
     height:  50px;    
       padding-left: 300px;
           margin-left: 500px; 
-              padding-bottom: 20px;
+              padding-bottom: 150px;
 }
 
 .item input {
@@ -105,20 +105,20 @@ body p {
     padding-bottom: 20px;
     padding-left: 300px;
     margin-left: 500px; 
-    padding-bottom: 30px;
+    padding-bottom: 150px;
 }
 
 .amount input {
 width: 100px; height:  50px;
     padding-left: 300px;
-    padding-bottom: 20px;
+    padding-bottom: 150px;
     margin-left: 500px; 
 }
 
 .date input {
 width: 100px; height:  50px;
     padding-left: 300px;
-        padding-bottom: 20px;
+    padding-bottom: 150px;
     margin-left: 500px; 
 }
 
