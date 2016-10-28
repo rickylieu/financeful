@@ -56,7 +56,7 @@ body p {
     font-size: 50px;
     display: inline-block; 
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-left: 50px;
 }
 
@@ -66,7 +66,7 @@ body p {
     display: inline-block;
     font-size: 50px;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
         padding-left: 50px;
 }
 
@@ -76,7 +76,7 @@ body p {
     display: inline-block;
     font-size: 50px; 
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-left: 50px;
 }
 
@@ -87,7 +87,7 @@ body p {
     font-size: 50px;
     display: inline-block; 
     margin: auto;
-    padding-top: 100px;
+    padding-top: 50px;
         padding-left: 50px;
 }
 
@@ -110,7 +110,7 @@ body p {
 .amount input {
 width: 100px; height:  100px;
     text-align:  center;
-        padding-left: 300px;
+    padding-left: 300px;
     margin-left: 500px; 
 }
 
