@@ -7,11 +7,6 @@
     {
       "name": "Food",
       "price": "$200.50"
-    },
-    {
-      "add_purchase": "/add_purchase",
-       "set": "/set", 
-       "index": "/"
     }
   ]
 }  
