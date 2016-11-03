@@ -46,7 +46,7 @@
     <label for="date">DATE:</label>
       <input name="date" id="date" type="text" /> 
   </div> 
-  <form action="{{add_purchase}}" onsubmit="myFunction()">
+  <form action="{{mood}}" onsubmit="myFunction()">
   <input type="submit" value="Submit">
 
 <script>
@@ -62,7 +62,7 @@ function myFunction() {
     //console.log(document.getElementById("category").value);
     //console.log(document.getElementById("amount").value);
     //console.log(document.getElementById("date").value);
-    window.prompt("How are you feeling today?", "Good");
+    window.confirm("Ready to submit?");
 }
 </script>
 
