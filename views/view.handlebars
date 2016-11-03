@@ -1,0 +1,30 @@
+<!doctype html>
+   <html>
+		<h1>Data Visualization</h1>
+    	<img src = "images/3.png" height = "100" width = "100">
+
+    	<div>
+			<h1>Monthly Spending</h1>
+			<img src = "images/4.png" height = "400" width = "600">
+		</div>
+
+   		<div id="add">
+			<a href="{{add_purchase}}">
+				<p>Navigate to Add Purchase</p>
+			</a>
+		</div>	
+
+   		<div id="home">
+			<a href="{{index}}">
+				<p>Nagivate to Home</p>
+			</a>
+		</div>	
+
+		<div>
+			{{#each purchases}}
+		  <h1>{{name}}</h1>
+		{{/each}}
+	</div>
+
+
+</html>

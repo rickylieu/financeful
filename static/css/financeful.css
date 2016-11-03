@@ -43,6 +43,10 @@ table, th, td {
 	background-color: gold;
 	padding: 10px;
 }
+
+#add {
+    background-color: blue;
+}
 body p {
 	font-size: 150px;
 	color: white;
