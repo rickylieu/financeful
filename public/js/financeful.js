@@ -9,46 +9,15 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!");
-	$(".name").click(projectClick);
+		console.log("Javascript connected!");
+	$.getJSON('data.json',function(data){
+      console.log(data.purchases[1]);
+      var obj = { item:"Food", price:"10", category:"play"};
+      data.purchases.push(obj);
+      console.log(data.purchases[3]);
+    });
 }
 
-function projectClick(e) {
-	e.preventDefault();
-	var name = $(this).text();
-	var title = $(".name");
-    console.log(anagrammedName(name));
-
-}	
-function anagrammedName(name) {
-	// Thanks, Internet Anagram Server!
+function projectClick(e) {  
 	
-	if (name == "Doug Engelbart") {
-		return "Notable Grudge";
-	} 
-	else if (name == "Ivan Sutherland") {
-		return "Vandal Heist Run";
-	}
-	else if (name == "JCR Licklider") {
-		return "Crick Rid Jell";
-	}
-	else if (name == "Vannevar Bush") {
-		return "Ravens Van Hub";
-	}
-	else if (name == "Alan C. Kay") {
-		return "Canal Yak";
-	}
-	else if (name == "Allen Newell") {
-		return "Ellen All New";
-	}
-	else if (name == "Lucy Suchman") {
-		return "Lunacy Chums";
-	}
-	else if (name == "Grace Hopper") {
-		return "Gear Chopper";
-	}
-	else {
-		console.log(name + " not known for anagramming.");
-		return name;
-	}
 }

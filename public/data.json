@@ -3,26 +3,22 @@
     {
       "item": "Games",
       "price": "13.56",
-      "category": "Entertainment",
-      "mood": "happy"
+      "category": "Entertainment"
     },
     {
       "item": "Groceries",
       "price": "200.50",
-      "category": "Food",
-      "mood": "satisfied"
+      "category": "Food"
     },
     {
       "item": "Rent",
       "price": "650.00",
-      "category": "Bills",
-      "mood": "sad"
+      "category": "Bills"
     }
   ],
   "login": "/",
   "index": "/index",
   "view": "/view",
   "set": "/set",
-  "add_purchase": "/add_purchase",
-  "mood": "/mood"
+  "add_purchase": "/add_purchase"
 }

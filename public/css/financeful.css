@@ -132,6 +132,11 @@ text-align:  left;
     text-align: center;
 }
 
+.mood {
+    width: 100%;
+    text-align: center;
+}
+
 /*.jumbotron p {
 	text-align: center;
 	background-color: red;

@@ -13,6 +13,7 @@ var login = require('./routes/login');
 var add_purchase = require('./routes/add_purchase');
 var view = require('./routes/view');
 var set = require('./routes/set');
+var mood = require('./routes/mood');
 // Example route
 // var user = require('./routes/user');
 
@@ -44,6 +45,7 @@ app.get('/index', index.view);
 app.get('/add_purchase', add_purchase.addPurchase);
 app.get('/view', view.view);
 app.get('/set', set.set);
+app.get('/mood', mood.mood);
 // Example route
 // app.get('/users', user.list);
 
