@@ -28,10 +28,13 @@
   <div class="category">
     <label for="category">CATEGORY:</label>
     <select>
-      <option value="food">FOOD</option>
+    <!--  <option value="food">FOOD</option>
       <option value="entertainment">ENTERTAINMENT</option>
       <option value="school">SCHOOL</option>
-      <option value="rent">RENT</option>
+      <option value="rent">RENT</option> -->
+    {{#each purchases}}
+    <option value={{category}}> {{category}}</option> 
+    {{/each}} 
     </select>
   </div>
   <br>

@@ -1,12 +1,19 @@
 {
   "purchases":  [
     {
-      "name": "Games",
-      "price": "$13.56"
+      "item": "Games",
+      "price": "13.56",
+      "category": "Entertainment"
     },
     {
-      "name": "Food",
-      "price": "$200.50"
+      "item": "Groceries",
+      "price": "200.50",
+      "category": "Food"
+    },
+    {
+      "item": "Rent",
+      "price": "650.00",
+      "category": "Bills" 
     }
   ],
 
