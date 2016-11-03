@@ -1,5 +1,5 @@
 {
-  "purchases": [
+  "purchases": {} [
     {
       "name": "Games",
       "price": "$13.56"
@@ -7,6 +7,12 @@
     {
       "name": "Food",
       "price": "$200.50"
+    },
+    {
+       "add_purchase": "/add_purchase", 
+       "set": "/set", 
+       "index": "/index"
     }
+
   ]
 }  
