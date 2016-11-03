@@ -4,5 +4,6 @@ var data = require('../data.json');
 exports.view = function(req, res){
 	console.log(data);
 
-	res.render('index', { "add_purchase": "/add_purchase", "view": "/view", "set": "/set"});
+	res.render('index', data); 
+	//{ "add_purchase": "/add_purchase", "view": "/view", "set": "/set"});
 };
