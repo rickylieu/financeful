@@ -1,5 +1,5 @@
 {
-  "purchases": [
+ "purchases": [
     {
       "item": "Games",
       "price": "13.56",
@@ -17,8 +17,15 @@
       "price": "650.00",
       "category": "Bills",
       "mood": "sad"
+    },
+    {
+      "item": "Plane ticket",
+      "price": "2050.21",
+      "category": "Travel",
+      "mood": "guilty"
     }
   ],
+
   "login": "/",
   "index": "/index",
   "view": "/view",
