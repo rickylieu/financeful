@@ -1,5 +1,6 @@
 html,
 body {
+    font-family: 'Roboto', sans-serif;
     background-image: url("greenbg.jpg");	
 	width: 100%;
 	height: 100%;
@@ -8,6 +9,7 @@ body {
 
 
 .menu {
+    font-family: 'Roboto', sans-serif;
 	width: 800px;
 	height: 300px;
 	margin: auto;
@@ -21,6 +23,7 @@ body {
 }
 
 .menu h1{
+    font-family: 'Rufina', serif;
 	font-size: 75px;
 	font-weight: bold
 }
@@ -48,6 +51,7 @@ table, th, td {
     background-color: blue;
 }
 body p {
+    font-family: 'Roboto', sans-serif;
 	font-size: 150px;
 	color: white;
 	text-align: center;
@@ -123,6 +127,7 @@ text-align:  left;
 }
 
 #login_title {
+    font-family: 'Rufina', serif;
     width: 100%;
     text-align: center;
 }
