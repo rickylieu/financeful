@@ -6,23 +6,39 @@
          <link href="css/bootstrap.min.css" rel="stylesheet">
          <link href="css/bootstrap-theme.min.css" rel="stylesheet">
          <link href="css/financeful.css" rel="stylesheet"> 
-		<h1>Data Visualization</h1>
-    	<img src = "images/3.png" height = "100" width = "100">
 
-    	<div>
-			<h1>Monthly Spending</h1>
-			<img src = "images/4.png" height = "400" width = "600">
-		</div>
+         	<p> Financeful </p> 
 
-   		<div id="add">
+     
+       <table style="width:20%" align="center">
+     	<tr> 
+    		<td > <a href="{{add_purchase}}" id="add"> ADD </a> </td> 
+    		<th> <a href="{{view}}"> VIEW </a> </th>
+    		<th> <a href="{{set}}"> SET </a> </th>
+          </tr>
+         </table>	
+         <br> 
+
+			<div id="title" align="center" style="font-size:600%; color:black" > Categories </div>
+			{{#each purchases}}
+			<tr>
+			
+			 <a href="#" class="category" align="center" id="{{category}}"> 
+			 	<h1> {{category}} </h1> </a> 
+			 {{/each}}
+			</tr>
+
+	    <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
+
+		<div id="add" align="center">
 			<a href="{{add_purchase}}">
-				<p>Navigate to Add Purchase</p>
+				Navigate to Add Purchase
 			</a>
 		</div>	
 
-   		<div id="home">
-			<a href="{{index}}">
-				<p>Navigate to Home</p>
+   		<div id="home" align="center">
+			<a href="{{index}}" >
+				Navigate to Home
 			</a>
 		</div>	
 

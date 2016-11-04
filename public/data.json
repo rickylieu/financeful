@@ -1,24 +1,35 @@
 {
-  "purchases": [
+ "purchases": [
     {
       "item": "Games",
       "price": "13.56",
-      "category": "Entertainment"
+      "category": "Entertainment",
+      "mood": "happy"
     },
     {
       "item": "Groceries",
       "price": "200.50",
-      "category": "Food"
+      "category": "Food",
+      "mood": "satisfied"
     },
     {
       "item": "Rent",
       "price": "650.00",
-      "category": "Bills"
+      "category": "Bills",
+      "mood": "sad"
+    },
+    {
+      "item": "Plane ticket",
+      "price": "2050.21",
+      "category": "Travel",
+      "mood": "guilty"
     }
   ],
+
   "login": "/",
   "index": "/index",
   "view": "/view",
   "set": "/set",
-  "add_purchase": "/add_purchase"
+  "add_purchase": "/add_purchase",
+  "mood": "/mood"
 }
