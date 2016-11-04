@@ -22,6 +22,15 @@ function projectClick(e) {
 	var text = $(this).text().replace(/\s/g,'');
 	var category = $("#status");
 	var totalCost = 0;
+	
+	var mood;
+	var happy;
+	var sad;
+	var resigned;
+	var okay;
+	var guilty;
+
+
     
    $.getJSON('data.json',function(data){
 	var i;
@@ -34,12 +43,14 @@ function projectClick(e) {
 		totalCost = totalCost + +data.purchases[i].price;
 	  if(readText === text.toUpperCase()) {
         cost = +cost + +data.purchases[i].price;
+        mood = data.purchases[i].mood;
       } 
     }
    console.log(cost);
    console.log(totalCost);
    console.log("You've spent " + Math.round(cost / totalCost * 100) + "% on " + text);
-   category.text("You've spent $" + cost + "(" + Math.round(cost / totalCost * 100) + "%) on " + text.toLowerCase() + ".");
+   category.text("You've spent $" + cost + "(" + Math.round(cost / totalCost * 100) + "%) on " + text.toLowerCase() 
+   	 + "." + " Your most frequent mood is " + mood + "." );
    delete cost;
 
   })  
