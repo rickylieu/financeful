@@ -31,5 +31,6 @@
   "view": "/view",
   "set": "/set",
   "add_purchase": "/add_purchase",
-  "mood": "/mood"
+  "mood": "/mood",
+  "history": "/history"
 }

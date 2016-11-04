@@ -3,11 +3,9 @@
     <script src="/js/jquery-1.11.0.js" ></script>
     <script src="/js/financeful.js" ></script>
     <script src="/js/bootstrap.js" ></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-     <link href="css/financeful.css" rel="stylesheet">
 
       <p> Financeful </p> 
+      <div class="all" style="color:black">
 
      
      <table style="width:20%" align="center">
@@ -18,30 +16,31 @@
       </tr>
     </table>  
   <br>
+  <div class="all" style="color:black">
 
-   		<h1>Manage your Categories</h1>
-    	<img src = "images/5.png" height = "100" width = "100">
+   		Manage your Categories
+    	<img src = "images/5.png" style="color:black" height = "100" width = "100">
 
-    	<body>
+
    		<form>
       			<fieldset>
         		<legend>Add a Category</legend>
-        			<p>
+        	
           				<label>Category</label>
           				<input type = "text"
                  		id = "item"
                  		value = "" />
-      				</p>
+      				
               <form action="{{index}}">
       				<input type="submit" value="Submit">
             </form>
       			</fieldset>
       	</form>	
-      	</body>
+      
 
-      	<body>
+  
         <legend>Remove a Category</legend>
-   	 	<select name="emotion" id="emotionID" size="3">
+   	 	<select name="emotion" id="emotionID" size="3" style="color:black">
     		{{#each purchases}}
         <option>{{category}}</option>
         {{/each}}
@@ -51,23 +50,25 @@
   		</form>
 
       </div>
-  		</body>
 
-  		<div id="add">
+
+  		<div id="add" style="color:black">
 			<a href="{{add_purchase}}">
-				<p>Navigate to Add Purchase</p>
+				Navigate to Add Purchase
 			</a>
 		</div>	
 
   		<div id="view">
 			<a href="{{view}}">
-				<p>Navigate to View Data</p>
+				Navigate to View Data
 			</a>
 		</div>	
 
-   		<div id="home">
+   		<div id="home" style="color:black">
 			<a href="{{index}}">
-				<p>Navigate to Home</p>
+				Navigate to Home
 			</a>
 		</div>	
+  </div>
+</div>
   	</html>

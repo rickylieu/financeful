@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head> 
+	<script src="/js/jquery-1.11.0.js" ></script>
+  <script src="/js/financeful.js" ></script>
+    <script src="/js/bootstrap.js" ></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+         <link href="css/financeful.css" rel="stylesheet">
+    <p> Financeful </p>
+     
+     <table style="width:20%" align="center">
+      <tr> 
+        <td > <a href="{{add_purchase}}" id="add"> ADD </a> </td> 
+        <th> <a href="{{view}}"> VIEW </a> </th>
+        <th> <a href="{{set}}"> SET </a> </th>
+      </tr>
+    </table>  
+  <br>
+
+      <h1 id="history" style="color: white; font-size: 350%" align="center"> History </h1>
+      <div class="elements" align=center style="font-size: 200%; color:black">
+      <tr>
+        <td> Item 
+        <td> Price 
+        <td> Category
+        <td> Mood
+      </tr>
+      <br>
+
+      <div style="color:black">
+      <tr>
+        {{#each purchases}}
+        <td> {{item}} {{price}} {{category}} {{mood}}
+          <br>
+        {{/each}}
+      </tr>  
+    </div>
+
+
+
+
+
+</html>  

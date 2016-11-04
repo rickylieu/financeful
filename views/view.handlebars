@@ -18,20 +18,19 @@
           </tr>
          </table>	
          <br> 
+          <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
 			<div id="title" align="center" style="font-size:600%; color:black" > Categories </div>
 			{{#each purchases}}
 			<tr>
-			
-			 <a href="#" class="category" align="center" id="{{category}}"> 
+			 <a href="#" class="category" align="center" style="font-size:300%" id="{{category}}"> 
 			 	<h1> {{category}} </h1> </a> 
 			 {{/each}}
 			</tr>
-
-	    <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
+	        <div> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </div>
 
 		<div id="add" align="center">
-			<a href="{{add_purchase}}">
+			<a href="{{category}}">
 				Navigate to Add Purchase
 			</a>
 		</div>	
