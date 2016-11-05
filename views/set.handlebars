@@ -4,13 +4,14 @@
     <script src="/js/financeful.js" ></script>
     <script src="/js/bootstrap.js" ></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-     <link href="css/financeful.css" rel="stylesheet">
+         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+         <link href="css/financeful.css" rel="stylesheet"> 
+      <div class="all" style="color:black; font-size:300%" align="center">
 
       <p> Financeful </p> 
 
      
-     <table style="width:20%" align="center">
+     <table style="width:50%" align="center">
       <tr> 
         <td > <a href="{{add_purchase}}" id="add"> ADD </a> </td> 
         <th> <a href="{{view}}"> VIEW </a> </th>
@@ -18,56 +19,61 @@
       </tr>
     </table>  
   <br>
+  <div class="all" style="color:black">
 
-   		<h1>Manage your Categories</h1>
-    	<img src = "images/5.png" height = "100" width = "100">
+   		Manage your Categories
+    	<img src = "images/5.png" style="color:black" height = "100" width = "100">
 
-    	<body>
+
    		<form>
       			<fieldset>
         		<legend>Add a Category</legend>
-        			<p>
+        	
           				<label>Category</label>
           				<input type = "text"
                  		id = "item"
                  		value = "" />
-      				</p>
+      				
               <form action="{{index}}">
       				<input type="submit" value="Submit">
             </form>
       			</fieldset>
       	</form>	
-      	</body>
-
-      	<body>
-        <legend>Remove a Category</legend>
-   	 	<select name="emotion" id="emotionID" size="3">
-    		{{#each purchases}}
-        <option>{{category}}</option>
-        {{/each}}
+        
+      <legend>Remove a Category</legend>
+   	 	<select id="mySelect" size="4" style="color:black">
+        <option> Food </option>
+        <option> Entertainment </option>
+        <option> Bill </option>
+        <option> Travel </option>
   		</select>
-      <form action="{{index}}">
-  		  <input type="submit" value="Submit">
-  		</form>
 
-      </div>
-  		</body>
+      <button onclick="myFunction()">Remove selected category</button>
 
-  		<div id="add">
+    <script>
+        function myFunction() {
+        var x = document.getElementById("mySelect");
+        x.remove(x.selectedIndex);
+      }
+    </script>
+    
+  		<div id="add" style="color:black">
 			<a href="{{add_purchase}}">
-				<p>Navigate to Add Purchase</p>
+				Navigate to Add Purchase
 			</a>
 		</div>	
 
   		<div id="view">
 			<a href="{{view}}">
-				<p>Navigate to View Data</p>
+				Navigate to View Data
 			</a>
 		</div>	
 
-   		<div id="home">
+   		<div id="home" style="color:black">
 			<a href="{{index}}">
-				<p>Navigate to Home</p>
+				Navigate to Home
 			</a>
 		</div>	
+  </div>
+</div>
   	</html>

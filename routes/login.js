@@ -1,4 +1,4 @@
-// Get all of our friend data
+// Get all of our data
 var data = require('../data.json');
 
 exports.login = function(req, res){
