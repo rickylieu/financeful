@@ -1,38 +1,35 @@
 {
- "purchases": [
-    {
-      "item": "Games",
-      "category": "Entertainment",
-      "price": "13.56",
-      "date": "10/23/16",
-      "mood": "happy"
-     
-    },
-    {
-      "item": "Groceries",
-      "category": "Food",
-      "price": "200.50",
-      "date": "10/25/16",  
-      "mood": "satisfied"
-          
-    },
-    {
-      "item": "Rent",
-      "category": "Bills",
-      "price": "650.00",
-      "date": "10/28/16", 
-      "mood": "sad"
-
-    },
-    {
-      "item": "Plane ticket",
-      "price": "2050.21",
-      "category": "Travel",
-      "date": "11/1/16",
-      "mood": "guilty"
-    }
-  ],
-
+  "purchases": [{
+    "item": "Games",
+    "category": "Entertainment",
+    "price": "13.56",
+    "date": "10/23/16",
+    "mood": "happy"
+  }, {
+    "item": "Groceries",
+    "category": "Food",
+    "price": "200.50",
+    "date": "10/25/16",
+    "mood": "satisfied"
+  }, {
+    "item": "Rent",
+    "category": "Bills",
+    "price": "650.00",
+    "date": "10/28/16",
+    "mood": "sad"
+  }, {
+    "item": "Plane ticket",
+    "price": "2050.21",
+    "category": "Travel",
+    "date": "11/1/16",
+    "mood": "guilty"
+  }, {
+    "item": "Shopping",
+    "category": "Entertainment",
+    "price": "13.56",
+    "date": "10/26/16",
+    "mood": "sad"
+  }],
   "login": "/",
   "index": "/index",
   "view": "/view",
