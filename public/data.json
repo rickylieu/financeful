@@ -23,12 +23,6 @@
     "category": "Travel",
     "date": "11/1/16",
     "mood": "guilty"
-  }, {
-    "item": "Shopping",
-    "category": "Entertainment",
-    "price": "13.56",
-    "date": "10/26/16",
-    "mood": "sad"
   }],
   "login": "/",
   "index": "/index",
