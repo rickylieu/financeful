@@ -24,6 +24,15 @@
     "date": "11/1/16",
     "mood": "guilty"
   }],
+  "categories": [{
+       "category": "Entertainment"
+  }, {
+       "category": "Food"
+  }, {
+       "category": "Bills"
+  }, {
+       "category": "Travel"
+  }],
   "login": "/",
   "index": "/index",
   "view": "/view",

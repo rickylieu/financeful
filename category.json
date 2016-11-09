@@ -1,0 +1,18 @@
+{
+  "category": [{
+    "category": "Entertainment"
+  }, {
+    "category": "Food"
+  }, {   
+    "category": "Bills"
+  }, {
+    "category": "Travel"
+  }],
+  "login": "/",
+  "index": "/index",
+  "view": "/view",
+  "set": "/set",
+  "add_purchase": "/add_purchase",
+  "mood": "/mood",
+  "history": "/history"
+}

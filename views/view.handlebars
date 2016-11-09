@@ -22,25 +22,32 @@
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="piechart" style="width: 900px; height: 500px;"></div>
 
-      <div id = "pie_chart" align = "center"> 
+      <div id = "pie_chart_category" align = "center"> 
       <script>
       google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
+      google.charts.setOnLoadCallback(drawChart1);
+      function drawChart1() {
 
-        var array = JSON.parse('../data.json')
-        var data = google.visualization.arrayToDataTable(array);
+        var data1 = google.visualization.arrayToDataTable([
+          ['Category', 'Amount Spent'],
+          ['Entertainment', 50],
+          ['Food', 200],
+          ['Bills', 400],
+          ['Travel', 1000]
+        ]);  
 
-        var options = {
-          title: 'My Spending Report'
+        var options1 = {
+          title: 'My Spending Report',
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart.draw(data, options);
-      }
+        chart1.draw(data1, options1);
+      };
       </script>
       </div>
+
+      <br>
 
       <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
