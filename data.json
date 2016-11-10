@@ -3,36 +3,37 @@
         {
             "item": "Games",
             "category": "Entertainment",
-            "amount": "13.56",
+            "price": "13.56",
             "date": "10/23/16",
-            "mood": "happy"
+            "mood": "Happy"
         },
         {
             "item": "Groceries",
             "category": "Food",
-            "amount": "200.50",
+            "price": "200.50",
             "date": "10/25/16",
-            "mood": "satisfied"
+            "mood": "Satisfied"
         },
         {
             "item": "Rent",
             "category": "Bills",
-            "amount": "650.00",
+            "price": "650.00",
             "date": "10/28/16",
-            "mood": "sad"
+            "mood": "Sad"
         },
         {
             "item": "Plane ticket",
-            "amount": "2050.21",
+            "price": "2050.21",
             "category": "Travel",
             "date": "11/1/16",
-            "mood": "guilty"
+            "mood": "Guilty"
         },
         {
-            "item": "Phone",
+            "item": "Ramen",
             "category": "Entertainment",
-            "amount": "250.50",
-            "date": "11-8-2016"
+            "price": "20",
+            "date": "11/10/2016",
+            "mood": "Happy"
         }
     ],
     "categories": [
@@ -47,12 +48,34 @@
         },
         {
             "category": "Travel"
+        }
+    ],
+    "trends": [
+        {
+            "trend": "Definitely"
         },
         {
-            "category": "Music"
+            "trend": "Not Sure"
         },
         {
-            "category": "Games"
+            "trend": "No"
+        },
+        {
+            "trend": "I have to"
+        }
+    ],
+    "moods": [
+        {
+            "mood": "Happy"
+        },
+        {
+            "mood": "Sad"
+        },
+        {
+            "mood": "Satisfied"
+        },
+        {
+            "mood": "Guilty"
         }
     ],
     "login": "/",

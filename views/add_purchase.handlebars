@@ -22,13 +22,11 @@
     </table>	
   <br>
 
+<div container>
   <div class="item">
     <label for="item">ITEM:</label>
       <input name="item" id="item" type="text"/>
   </div>  
-
-  <br>
-
   <div class="category">
     <label for="category">CATEGORY:</label>
     <select id = "mySelect">
@@ -37,19 +35,34 @@
         {{/each}}
 </select>
   </div>
-
-  <br>
   <div class = "amount">
     <label for="amount">AMOUNT:</label>
       <input name="amount" id="amount" type="text" /> 
   </div>
-  <br>
   <div class = "date">
     <label for="date">DATE:</label>
       <input name="date" id="date" type="text" /> 
   </div> 
-  
-	<br>
+
+  <div class = "mood">
+        <label for="mood">Mood:</label>
+    <select id = "myMood">
+        {{#each moods}}
+        <option value={{mood}} id="mood"> {{mood}}</option> 
+        {{/each}}
+  </select>
+  </div>
+
+
+  <div class = "trend">
+        <label for="trend">Would you buy it again?:</label>
+    <select id = "trend">
+        {{#each trends}}
+        <option value={{trend}} id="trend"> {{trend}}</option> 
+        {{/each}}
+  </select>
+  </div>
+</div>
   <br>
   <br>
   <div class="back" >
@@ -59,7 +72,7 @@
     <a href="{{index}}">
       <img src="images/house.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px;">
     </a>   
-    <a href="{{mood}}">
+    <a href="{{view}}">
       <img src="images/checked.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px; onclick = "getdata()">
     </div>
 </body>   
@@ -72,12 +85,14 @@ function getdata(){
     var category = document.getElementById("category");
     var amount = document.getElementById("amount");
     var date = document.getElementById("date");
+    var mood = document.getElementById("mood");
     $.post("/add_purchase", 
     { 
       "item": item.value,
       "category": category.value, 
-      "amount": amount.value, 
-      "date": date.value
+      "price": amount.value, 
+      "date": date.value,
+      "mood": mood.value
     }, function(data) {console.log("success!")});
 };
 </script>  

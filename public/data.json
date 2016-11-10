@@ -4,25 +4,25 @@
     "category": "Entertainment",
     "price": "13.56",
     "date": "10/23/16",
-    "mood": "happy"
+    "mood": "Happy"
   }, {
     "item": "Groceries",
     "category": "Food",
     "price": "200.50",
     "date": "10/25/16",
-    "mood": "satisfied"
+    "mood": "Satisfied"
   }, {
     "item": "Rent",
     "category": "Bills",
     "price": "650.00",
     "date": "10/28/16",
-    "mood": "sad"
+    "mood": "Sad"
   }, {
     "item": "Plane ticket",
     "price": "2050.21",
     "category": "Travel",
     "date": "11/1/16",
-    "mood": "guilty"
+    "mood": "Guilty"
   }],
   "categories": [{
        "category": "Entertainment"
@@ -32,6 +32,24 @@
        "category": "Bills"
   }, {
        "category": "Travel"
+  }],
+  "trends": [{
+       "trend": "Definitely"
+  }, {
+       "trend": "Not Sure"
+  }, {
+       "trend": "No"
+  }, {
+       "trend": "I have to"
+  }],
+    "moods": [{
+       "mood": "Happy"
+  }, {
+       "mood": "Sad"
+  }, {
+       "mood": "Satisfied"
+  }, {
+       "mood": "Guilty"
   }],
   "login": "/",
   "index": "/index",
