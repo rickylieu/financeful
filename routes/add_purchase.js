@@ -12,7 +12,7 @@ function appendObject(r){
 }
 
 exports.addPurchase = function(req, res) {
-  console.log(req.body);
+  //console.log(req.body);
   appendObject(req.body);
 }
 

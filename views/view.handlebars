@@ -20,7 +20,7 @@
          <br> 
 
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-       <div id="piechart" style="width: 900px; height: 500px;"></div>
+       <div id="piechart" style="width: 900px; height: 500px;" align="center"></div>
 
       <div id = "pie_chart_category" align = "center"> 
       <script>
@@ -46,8 +46,39 @@
       };
       </script>
       </div>
+      <br>
+
+      <div id = "pie_chart_category2" align = "center"> 
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data2 = google.visualization.arrayToDataTable([
+          ['Mood', 'Occurrences per month'],
+          ['Okay',     11],
+          ['Happy',      15],
+          ['Resigned',  3],
+          ['Guilty', 10],
+          ['Sad',    4]
+        ]);
+
+        var options = {
+          title: 'My Mood Report'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data2, options);
+      }
+    </script>      
+  </div>
+   <div id="piechart2" style="width: 900px; height: 500px;"></div>
+
 
       <br>
+
+      
 
       <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
