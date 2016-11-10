@@ -1,16 +1,24 @@
-fs = require('fs');
-var data = require("../data.json");''
-var file = '../data.json'
+
+function appendObject(r){
+  var fs = require('fs');
+  var configFile = fs.readFileSync('./data.json');
+  var config = JSON.parse(configFile);
+  console.log("\n---\n");
+  console.log(r);
+  console.log("\n---\n");
+  config.purchases.push(r);
+  var configJSON = JSON.stringify(config, null, 4);
+  fs.writeFileSync('./data.json', configJSON);
+}
 
 exports.addPurchase = function(req, res) {
-	// Your code goes here
- 
-  console.log("yay, addPurchase just ran!");
-  res.render('add_purchase', data);
-  //data.purchases.push({
-  console.log(data) 
-  //fs.writeFile('data.json',JSON.stringify(data, null, 2), function(err) {
-  //	console.error(err)
-  //})
-  //{ "set": "/set", "view": "/view", "index": "/index"});
+  //console.log(req.body);
+  appendObject(req.body);
+}
+
+exports.view = function(req, res) {
+  var fs = require('fs');
+  data_read = JSON.parse(fs.readFileSync('./data.json'));
+  //console.log(data_read);
+  res.render('add_purchase', data_read);
 }

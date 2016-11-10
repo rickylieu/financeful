@@ -18,8 +18,10 @@
     </table>  
   <br>
 
-      <h1 id="history" style="color: white; font-size: 350%" align="center"> History </h1>
-      <div class="elements" align=center style="font-size: 200%; color:black">
+      <h1 id="history" style="color: white; font-size: 500%" align="center"> History </h1>
+      <div class="history_table" style="font-size: 10%">
+        <table class="new_table" align="center" style="font-size:10px" id="history_table"  >
+     <!-- <div class="elements" align=center style="font-size: 200%; color:black"> -->
       <tr>
         <td> Item 
         <td> Category 
@@ -32,10 +34,16 @@
       <div style="color:black">
       <tr>
         {{#each purchases}}
-        <td> {{item}} {{price}} {{category}} {{date}} {{mood}}
-          <br>
+         <td> {{item}} </td>
+         <td> {{category}} </td>
+         <td> {{amount}} </td>  
+         <td>{{date}}</td> 
+         <td>{{mood}} </td>
+        <br>
+      </tr>                 
         {{/each}}
-      </tr>  
+      </tr>
+    </div>
     </div>
 
 

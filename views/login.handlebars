@@ -22,13 +22,32 @@
       <input type="password" name="password" id="password" type="text" /> 
   </div>
 
-  <div class = "submit" align="center" >
-  	<label for="submit"></label>
-  	   <a href="{{index}}"> 
-  	  <input type="submit" name="submit" id="submit" />
-  	  </a>
+  <div class = "submit" align="center" id = "link">
+    <label for="submit"></label>
+      <a id = "dynamicLink" href="{{index}}"> 
+      <input type="submit" name="submit" id="submit" onclick = "checklogin()"/>
+      </a>
   </div>
 </div>  
 
+
+<script>
+
+function checklogin(){
+    console.log("hi");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
+    var element = document.getElementById("dynamicLink");
+    console.log(username.value);
+    console.log(password.value);
+    if (username.value == "kevin" && password.value == "financeful") {
+      element.href = "/index";
+    }
+    else {
+       element.href = "/";
+    }
+
+};
+</script> 
 
 </html>  

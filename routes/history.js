@@ -1,6 +1,7 @@
 // Get all of our data
-var data = require('../data.json');
-
 exports.checkHistory = function(req, res){
+	console.log("HELLLOOO");
+	var fs = require('fs'); 
+	data = JSON.parse(fs.readFileSync('./data.json'));
 	res.render('history', data );
 };

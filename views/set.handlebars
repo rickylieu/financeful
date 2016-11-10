@@ -24,7 +24,6 @@
    		Manage your Categories
     	<img src = "images/5.png" style="color:black" height = "100" width = "100">
 
-
    		<form>
       			<fieldset>
         		<legend>Add a Category</legend>
@@ -35,17 +34,16 @@
                  		value = "" />
       				
               <form action="{{index}}">
-      				<input type="submit" value="Submit">
+      				<input type="submit" id = "add_category" value="Submit" onclick = 'addcategory()'>
             </form>
       			</fieldset>
       	</form>	
         
       <legend>Remove a Category</legend>
    	 	<select id="mySelect" size="4" style="color:black">
-        <option> Food </option>
-        <option> Entertainment </option>
-        <option> Bill </option>
-        <option> Travel </option>
+        {{#each categories}}
+        <option value={{category}} id="category"> {{category}}</option> 
+        {{/each}} 
   		</select>
 
       <button onclick="myFunction()">Remove selected category</button>
@@ -54,6 +52,16 @@
         function myFunction() {
         var x = document.getElementById("mySelect");
         x.remove(x.selectedIndex);
+        }
+
+        function addcategory(){
+          var data = document.getElementById("item");
+          console.log(data.value)
+
+          $.post("/set", 
+          { 
+            "category": data.value
+        }, function(data) {console.log("success!")});
       }
     </script>
     

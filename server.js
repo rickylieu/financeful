@@ -43,13 +43,15 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', login.login);
 app.get('/index', index.view);
-app.get('/add_purchase', add_purchase.addPurchase);
+app.get('/add_purchase', add_purchase.view);
 app.get('/view', view.view);
 app.get('/set', set.set);
 app.get('/mood', mood.mood);
 app.get('/history', history.checkHistory)
-// Example route
-// app.get('/users', user.list);
+app.post('/add_purchase', add_purchase.addPurchase)
+app.post('/set', set.addCategory)
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -12,7 +12,6 @@
 
 <body>
 	<p> Financeful </p> 
-
      
      <table style="width:20%" align="center">
     	<tr> 
@@ -27,15 +26,18 @@
     <label for="item">ITEM:</label>
       <input name="item" id="item" type="text"/>
   </div>  
+
   <br>
+
   <div class="category">
     <label for="category">CATEGORY:</label>
-    <select>
-      {{#each purchases}}
-      <option value={{category}} id="category"> {{category}}</option> 
-      {{/each}} 
-    </select>
+    <select id = "mySelect">
+        {{#each categories}}
+        <option value={{category}} id="category"> {{category}}</option> 
+        {{/each}}
+</select>
   </div>
+
   <br>
   <div class = "amount">
     <label for="amount">AMOUNT:</label>
@@ -52,34 +54,33 @@
   <br>
   <div class="back" >
     <a href="javascript:history.back()">
-      <img src="images/back.png" height="200" width="300" align="left" style="PADDING-LEFT: 100px;">
+      <img src="images/back.png" height="200" width="300" align="left" style= PADDING-LEFT: 100px;">
     </a>  
     <a href="{{index}}">
-      <img src="images/house.png" height="200" width="300" align="center" style="PADDING-LEFT: 100px;">
-    </a>  
+      <img src="images/house.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px;">
+    </a>   
     <a href="{{mood}}">
-      <img src="images/checked.png" height="200" width="300" align="center" style="PADDING-LEFT: 100px;">
+      <img src="images/checked.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px; onclick = "getdata()">
     </div>
 </body>   
-<!--<form action="{{mood}}" onsubmit="myFunction()">
-  <input type="submit" value="Submit">
 
 <script>
-/*function myFunction() {
-    $.getJSON('data.json',function(data){
-      console.log(data.purchases[1]);
-      var obj = { item:"Food", price:"10", category:"play"};
-      data.purchases.push(obj);
-      console.log(data.purchases[3]);
-    });  
- 
-    //console.log(document.getElementById("item").value);
-    //console.log(document.getElementById("category").value);
-    //console.log(document.getElementById("amount").value);
-    //console.log(document.getElementById("date").value);
-    window.confirm("Ready to submit?");
-}*/
-</script> -->
+
+function getdata(){
+    console.log("hi");
+    var item = document.getElementById("item");
+    var category = document.getElementById("category");
+    var amount = document.getElementById("amount");
+    var date = document.getElementById("date");
+    $.post("/add_purchase", 
+    { 
+      "item": item.value,
+      "category": category.value, 
+      "amount": amount.value, 
+      "date": date.value
+    }, function(data) {console.log("success!")});
+};
+</script>  
 
 </form>
 
