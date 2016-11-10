@@ -52,7 +52,7 @@
         function removecategory() {
           console.log("remove being called")
         var data = document.getElementById("mySelect");
-          $.post("/set", 
+          $.post("/set/remove", 
             { 
               "category": data.value
             }, 
