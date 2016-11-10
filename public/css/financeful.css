@@ -38,10 +38,14 @@ a {
 
 table, th, td {
 	text-align: center;
-	font-size: 125px;
+	font-size: 300%;
 	border: 3px solid black;
 	background-color: gold;
 	padding: 10px;
+}
+
+.history_table{
+    height: 20px;
 }
 
 body p {

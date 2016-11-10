@@ -34,7 +34,7 @@
                  		value = "" />
       				
               <form action="{{index}}">
-      				<input type="submit" id = "add_category" value="Submit" onclick = 'addcategory()''>
+      				<input type="submit" id = "add_category" value="Submit" onclick = 'addcategory()'>
             </form>
       			</fieldset>
       	</form>	
@@ -53,9 +53,16 @@
           console.log("remove being called")
         var data = document.getElementById("mySelect");
           $.post("/set", 
-          { 
-            "category": data.value
-        }, function(data) {console.log("success!")});
+            { 
+              "category": data.value
+            }, 
+            function(data) {
+              //console.log("success!");
+              alert(data);
+            }
+
+          );
+
         }
 
         function addcategory(){

@@ -33,6 +33,24 @@
   }, {
        "category": "Travel"
   }],
+  "trends": [{
+       "trend": "Definitely"
+  }, {
+       "trend": "Not Sure"
+  }, {
+       "trend": "No"
+  }, {
+       "trend": "I have to"
+  }],
+    "moods": [{
+       "mood": "Happy"
+  }, {
+       "mood": "Sad"
+  }, {
+       "mood": "Satisfied"
+  }, {
+       "mood": "Guilty"
+  }],
   "login": "/",
   "index": "/index",
   "view": "/view",
