@@ -64,7 +64,7 @@
         ]);
 
         var options = {
-          title: 'My Mood Report'
+          title: 'My Overall Mood Report'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
@@ -78,7 +78,36 @@
 
       <br>
 
-      
+
+      <div id = "pie_chart_category3" align = "center"> 
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data3 = google.visualization.arrayToDataTable([
+          ['Mood', 'Occurrences per month'],
+          ['Okay',     1],
+          ['Happy',      2],
+          ['Resigned',  0],
+          ['Guilty', 5],
+          ['Sad',    1]
+        ]);
+
+        var options = {
+          title: 'My Mood for Entertainment'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data3, options);
+      }
+    </script>      
+  </div>
+   <div id="piechart3" style="width: 900px; height: 500px;"></div>
+
+
+      <br>
 
       <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
