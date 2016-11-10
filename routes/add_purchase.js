@@ -7,7 +7,7 @@ function appendObject(r){
   console.log(r);
   console.log("\n---\n");
   config.purchases.push(r);
-  var configJSON = JSON.stringify(config);
+  var configJSON = JSON.stringify(config, null, 4);
   fs.writeFileSync('./data.json', configJSON);
 }
 

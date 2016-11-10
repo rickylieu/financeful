@@ -19,7 +19,7 @@ function appendObject(r){
   console.log("\n---\n");
   config.categories.push(r);
   var configJSON = JSON.stringify(config);
-  fs.writeFileSync('./data.json', configJSON);
+  fs.writeFileSync('./data.json', configJSON, null, 4);
 }
 
 exports.addCategory = function(req, res) {
