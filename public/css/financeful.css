@@ -38,12 +38,15 @@ a {
 
 table, th, td {
 	text-align: center;
-	font-size: 125px;
+	font-size: 300%;
 	border: 3px solid black;
 	background-color: gold;
 	padding: 10px;
 }
 
+.table-bordered {
+    font-size: 30px;
+}
 body p {
 	font-size: 150px;
 	color: white;
