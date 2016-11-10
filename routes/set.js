@@ -14,15 +14,25 @@ function appendObject(r){
   var configFile = fs.readFileSync('./data.json');
   console.log(configFile)
   var config = JSON.parse(configFile);
-  console.log("\n---\n");
-  console.log(r);
-  console.log("\n---\n");
   config.categories.push(r);
   var configJSON = JSON.stringify(config);
   fs.writeFileSync('./data.json', configJSON);
 }
 
 exports.addCategory = function(req, res) {
-  console.log(req.body);
   appendObject(req.body);
+}
+
+exports.removeCategory = function(req, res) {
+  deleteObject(req.body);
+}
+
+function deleteObject(r){
+  var fs = require('fs');
+  var configFile = fs.readFileSync('./data.json');
+  console.log(configFile)
+  var config = JSON.parse(configFile);
+  delete config.categories[0]
+  var configJSON = JSON.stringify(config);
+  fs.writeFileSync('./data.json', configJSON);
 }

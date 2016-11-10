@@ -46,10 +46,10 @@ app.get('/index', index.view);
 app.get('/add_purchase', add_purchase.view);
 app.get('/view', view.view);
 app.get('/set', set.set);
-app.get('/mood', mood.mood);
 app.get('/history', history.checkHistory)
 app.post('/add_purchase', add_purchase.addPurchase)
 app.post('/set', set.addCategory)
+app.post('/set', set.removeCategory)
 
 
 

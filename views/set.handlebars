@@ -46,15 +46,20 @@
         {{/each}} 
   		</select>
 
-      <button onclick="myFunction()">Remove selected category</button>
+      <button onclick="removecategory()">Remove selected category</button>
 
     <script>
-        function myFunction() {
-        var x = document.getElementById("mySelect");
-        x.remove(x.selectedIndex);
+        function removecategory() {
+          console.log("remove being called")
+        var data = document.getElementById("mySelect");
+          $.post("/set", 
+          { 
+            "category": data.value
+        }, function(data) {console.log("success!")});
         }
 
         function addcategory(){
+            console.log("add called")
           var data = document.getElementById("item");
           console.log(data.value)
 
