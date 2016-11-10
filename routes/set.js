@@ -12,11 +12,12 @@ exports.set = function(req, res) {
 function appendObject(r){
   var fs = require('fs');
   var configFile = fs.readFileSync('./data.json');
+  console.log(configFile)
   var config = JSON.parse(configFile);
   console.log("\n---\n");
   console.log(r);
   console.log("\n---\n");
-  config.purchases.push(r);
+  config.categories.push(r);
   var configJSON = JSON.stringify(config);
   fs.writeFileSync('./data.json', configJSON);
 }

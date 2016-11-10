@@ -6,7 +6,3 @@ exports.login = function(req, res){
 	res.render('login', data );
 };
 
-exports.checklog = function(req, res) {
-  console.log(req.body);
-  appendObject(req.body);
-}

@@ -55,14 +55,14 @@
         }
 
         function addcategory(){
+          var data = document.getElementById("item");
+          console.log(data.value)
 
-        var category = document.getElementById("item");
-        $.post("/set", 
-        { 
-          "categories":[{"category": category.value}]  
+          $.post("/set", 
+          { 
+            "category": data.value
         }, function(data) {console.log("success!")});
-        };
-
+      }
     </script>
     
   		<div id="add" style="color:black">

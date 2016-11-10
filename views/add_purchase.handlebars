@@ -26,16 +26,16 @@
     <label for="item">ITEM:</label>
       <input name="item" id="item" type="text"/>
   </div>  
+
   <br>
+
   <div class="category">
     <label for="category">CATEGORY:</label>
-    <select id = "add_cat">
-
-    <script>
-      
-    </script>
-
-   </select> 
+    <select id = "mySelect">
+        {{#each categories}}
+        <option value={{category}} id="category"> {{category}}</option> 
+        {{/each}}
+</select>
   </div>
 
   <br>
