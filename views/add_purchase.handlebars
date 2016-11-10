@@ -82,10 +82,14 @@
 function getdata(){
     console.log("hi");
     var item = document.getElementById("item");
-    var category = document.getElementById("category");
+    var category = document.getElementById("mySelect");
     var amount = document.getElementById("amount");
     var date = document.getElementById("date");
-    var mood = document.getElementById("mood");
+    var mood = document.getElementById("myMood");
+    console.log("______________")
+    console.log(mood.value)
+    console.log(category.value)
+    console.log("______________")
     $.post("/add_purchase", 
     { 
       "item": item.value,

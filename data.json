@@ -34,6 +34,48 @@
             "price": "200",
             "date": "11/10/2016",
             "mood": "Happy"
+        },
+        {
+            "item": "jiji",
+            "category": "Entertainment",
+            "price": "i",
+            "date": "i",
+            "mood": "Happy"
+        },
+        {
+            "item": "j",
+            "category": "Entertainment",
+            "price": "j",
+            "date": "j",
+            "mood": "Happy"
+        },
+        {
+            "item": "ramen",
+            "category": "Entertainment",
+            "price": "j",
+            "date": "j",
+            "mood": "Happy"
+        },
+        {
+            "item": "ramen",
+            "category": "Entertainment",
+            "price": "j",
+            "date": "j",
+            "mood": "Happy"
+        },
+        {
+            "item": "njnjnj",
+            "category": "Bills",
+            "price": "j",
+            "date": "j",
+            "mood": "Happy"
+        },
+        {
+            "item": "kmkmk",
+            "category": "Travel",
+            "price": "km",
+            "date": "m",
+            "mood": "Guilty"
         }
     ],
     "categories": [
