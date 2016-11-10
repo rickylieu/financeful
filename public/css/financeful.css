@@ -44,9 +44,10 @@ table, th, td {
 	padding: 10px;
 }
 
-.table-bordered {
-    font-size: 30px;
+.history_table{
+    height: 20px;
 }
+
 body p {
 	font-size: 150px;
 	color: white;
