@@ -24,32 +24,37 @@
 
       <div id = "pie_chart_category" align = "center"> 
       <script>
-   
-      var input = [];
+    
+      var prices=[]
+      var price;
+      var price1;
+      var price2;
+      var price3;
         $.getJSON("data.json", function(data) { 
             //console.log(data.key);
-            var i = 0;
-               for( i=0; i < data.purchases.length; ++i) {
-                 input[i] = data.purchases[i].price;
-                 console.log(input[i]);
-                }
+          var i;
+          for(i=0; i < data.purchases.length; ++i) {
+            prices[i] = data.purchases[i].price;
+          }
+        /*  price =  data.purchases[0].price;
+          price1 =  data.purchases[1].price;
+          price2=  data.purchases[2].price;
+          price3 =  data.purchases[3].price;
+          console.log(price); */
+        console.log(prices[2]);
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
-        var input = 150;
-        var input2 = 200;
-        var input3 = 250;
-        var input4 = 300;
+    
 
        //nput = "['Category', 'Amount Spent']"
         //Categories table
-        console.log(input[1]);
         var data1 = google.visualization.arrayToDataTable([
         [ 'Category', 'Amount Spent'],
-          ['Entertainment', input],
-          ['Food', input2],
-          ['Bills', input3],
-          ['Travel', input4]
+          ['Entertainment', parseFloat(prices[0])],
+          ['Food', parseFloat(prices[1])],
+          ['Bills', parseFloat(prices[2])],
+          ['Travel', parseFloat(prices[3])]
         ]);  
 
         var options1 = {
