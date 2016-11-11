@@ -41,6 +41,7 @@
       }
         $.getJSON("../data.json", function(data) { 
           //Categories chart
+          console.log(data);
           var i,j;
           for(i=0; i < data.categories.length; ++i) {
             categories[i] = data.categories[i].category;
