@@ -1,16 +1,19 @@
 <!doctype html>
    <html>
-   <head>
-    <script src="/js/jquery-1.11.0.js" ></script>
-    <script src="/js/financeful.js" ></script>
+  <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Rufina" rel="stylesheet">
+  <script src="/js/jquery-1.11.0.js" ></script>
+  <script src="/js/financeful.js" ></script>
     <script src="/js/bootstrap.js" ></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-         <link href="css/financeful.css" rel="stylesheet"> 
-      <div class="all" style="color:black; font-size:300%" align="center">
-    </head> 
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/financeful.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  </head>
 
-    <body>
+<body>
 
 <div class = "container">
    <div class="page-header">
@@ -36,32 +39,30 @@
 <form>
   <div class="form-group">
     <label for="exampleTextarea">add a category</label>
-    <textarea class="form-control" id="add_category" rows="1"></textarea>
+    <textarea class="form-control" id="item" rows="1"></textarea>
   </div>
 
 
-      			<fieldset>
-        		<legend>Add a Category</legend>
-        	
-          				<label>Category</label>
-          				<input type = "text"
-                 		id = "item"
-                 		value = "" />
-      				
-              <form action="{{index}}">
-      				<input type="submit" id = "add_category" value="Submit" onclick = 'addcategory()'>
-            </form>
-      			</fieldset>
-      	</form>	
-        
-      <legend>Remove a Category</legend>
-   	 	<select id="mySelect" size="4" style="color:black">
-        {{#each categories}}
-        <option value={{category}} id="category"> {{category}}</option> 
-        {{/each}} 
-  		</select>
+  <button type="submit" class="btn btn-primary" onclick = "addcategory()"> add</button>
 
-      <button onclick="removecategory()">Remove selected category</button>
+
+  <div class="form-group">
+    <label for="exampleSelect1">remove a category</label>
+    <select class="form-control" id="mySelect">
+        {{#each categories}}
+          <option value={{category}}> {{category}}</option> 
+        {{/each}}
+    </select>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" onclick = "removecategory()"> remove</button>
+
+  </form>
+
+</div>
+</body>
+
 
     <script>
         function removecategory() {
@@ -92,23 +93,4 @@
       }
     </script>
     
-  		<div id="add" style="color:black">
-			<a href="{{add_purchase}}">
-				Navigate to Add Purchase
-			</a>
-		</div>	
-
-  		<div id="view">
-			<a href="{{view}}">
-				Navigate to View Data
-			</a>
-		</div>	
-
-   		<div id="home" style="color:black">
-			<a href="{{index}}">
-				Navigate to Home
-			</a>
-		</div>	
-  </div>
-</div>
   	</html>
