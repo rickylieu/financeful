@@ -1,24 +1,41 @@
 <!doctype html>
    <html>
-         <script src="/js/jquery-1.11.0.js" ></script>
-         <script src="/js/financeful.js" ></script>
-         <script src="/js/bootstrap.js" ></script>
-         <link href="css/bootstrap.min.css" rel="stylesheet">
-         <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-         <link href="css/financeful.css" rel="stylesheet"> 
+      <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Rufina" rel="stylesheet">
+  <script src="/js/jquery-1.11.0.js" ></script>
+  <script src="/js/financeful.js" ></script>
+    <script src="/js/bootstrap.js" ></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/financeful.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  </head>
 
-         	<p> Financeful </p> 
-
+<body>
+<div class = "container">
+   <div class="page-header">
+    <h1>Financeful</h1>
+  </div>
      
-       <table style="width:20%" align="center">
-     	<tr> 
-    		<td > <a href="{{add_purchase}}" id="add"> ADD </a> </td> 
-    		<th> <a href="{{view}}"> VIEW </a> </th>
-    		<th> <a href="{{set}}"> SET </a> </th>
-          </tr>
-         </table>	
-         <br> 
 
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="glyphicon glyphicon-list"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="{{index}}">Home</a></li>
+    <li><a href="{{add_purchase}}">Add Purchase</a></li>
+    <li><a href="{{view}}">View Data</a></li>
+    <li><a href="{{set}}">Manage Settings</a></li>
+  </ul>
+</div>
+
+  <div align="center"> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </a></div>
+  
+    </div>
+</body>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
        <div id="piechart" style="width: 900px; height: 500px;" align="center"></div>
 
@@ -225,35 +242,6 @@
   }
   </script>
   <div id="barchart_values" style="width: 900px; height: 300px;" align="center"></div>
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-     <!-- <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
-
-			<div id="title" align="center" style="font-size:600%; color:black" > Categories </div>
-			{{#each purchases}}
-			<tr>
-
-			 <a href="#" class="category" align="center" style="font-size:300%" id="{{category}}"> 
-			 	<h1> {{category}} </h1> </a> 
-			 {{/each}}
-			</tr>
-    -->
-            <div align="center"> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </div>
-
-   		<div id="home" align="center" style="font-size:150%">
-			<a href="{{index}}" >
-				Navigate to Home
-			</a>
-		</div>	
-
-
-
 
 
 </html>
