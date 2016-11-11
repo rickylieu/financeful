@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "purchases": [{
     "item": "Games",
     "category": "Entertainment",
@@ -62,8 +61,7 @@
   "set": "/set",
   "add_purchase": "/add_purchase",
   "mood": "/mood",
-  "history": "/history"
-=======
+  "history": "/history",
     "purchases": [
         {
             "item": "Games",
@@ -167,5 +165,4 @@
     "add_purchase": "/add_purchase",
     "mood": "/mood",
     "history": "/history"
->>>>>>> 259e252aaa75ae90ef5c0bc037b949eec3c1495d
 }
