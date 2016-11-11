@@ -11,92 +11,100 @@
 </head>
 
 <body>
-	<p> Financeful </p> 
-     
-     <table style="width:20%" align="center">
-    	<tr> 
-    		<td > <a href="{{add_purchase}}" id="add"> ADD </a> </td> 
-    		<th> <a href="{{view}}"> VIEW </a> </th>
-    		<th> <a href="{{set}}"> SET </a> </th>
-      </tr>
-    </table>	
-  <br>
 
-<div container>
-  <div class="item">
-    <label for="item">ITEM:</label>
-      <input name="item" id="item" type="text"/>
-  </div>  
-  <div class="category">
-    <label for="category">CATEGORY:</label>
-    <select id = "mySelect">
-        {{#each categories}}
-        <option value={{category}} id="category"> {{category}}</option> 
-        {{/each}}
-</select>
-  </div>
-  <div class = "amount">
-    <label for="amount">AMOUNT:</label>
-      <input name="amount" id="amount" type="text" /> 
-  </div>
-  <div class = "date">
-    <label for="date">DATE:</label>
-      <input name="date" id="date" type="text" /> 
-  </div> 
+<div class="container">
 
-  <div class = "mood">
-        <label for="mood">Mood:</label>
-    <select id = "myMood">
-        {{#each moods}}
-        <option value={{mood}} id="mood"> {{mood}}</option> 
-        {{/each}}
-  </select>
+  <div class="page-header">
+    <h1>Financeful</h1>
   </div>
 
-
-  <div class = "trend">
-        <label for="trend">Would you buy it again?:</label>
-    <select id = "trend">
-        {{#each trends}}
-        <option value={{trend}} id="trend"> {{trend}}</option> 
-        {{/each}}
-  </select>
-  </div>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span class="glyphicon glyphicon-list"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="{{index}}">Home</a></li>
+    <li><a href="{{add_purchase}}">Add Purchase</a></li>
+    <li><a href="{{view}}">View Data</a></li>
+    <li><a href="{{set}}">Manage Settings</a></li>
+  </ul>
 </div>
-  <br>
-  <br>
-  <div class="back" >
-    <a href="javascript:history.back()">
-      <img src="images/back.png" height="200" width="300" align="left" style= PADDING-LEFT: 100px;">
-    </a>  
-    <a href="{{index}}">
-      <img src="images/house.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px;">
-    </a>   
-    <a href="{{view}}">
-      <img src="images/checked.png" height="200" width="300" align="center" style= PADDING-LEFT: 100px; onclick = "getdata()">
-    </div>
+
+<br>
+<br>
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleTextarea">item</label>
+    <textarea class="form-control" id="item" rows="1"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleSelect1">category</label>
+    <select class="form-control" id="mySelect">
+        {{#each categories}}
+          <option value={{category}}> {{category}}</option> 
+        {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleTextarea">price</label>
+    <textarea class="form-control" id="amount" rows="1"></textarea>
+  </div>
+
+ <div class="form-group">
+    <label for="exampleTextarea">date</label>
+    <textarea class="form-control" id="date" rows="1"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="exampleSelect1">mood</label>
+    <select class="form-control" id="mood">
+        {{#each moods}}
+          <option value={{mood}}> {{mood}}</option> 
+        {{/each}}
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="exampleSelect1">Would you buy it again</label>
+    <select class="form-control" id="trend">
+        {{#each trends}}
+          <option value={{trend}}> {{trend}}</option> 
+        {{/each}}
+    </select>
+</div>
+
+<button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button>
+</form>
+
+
+</div>
+
+
 </body>   
 
-<script>
 
+
+<script>
 function getdata(){
-    console.log("hi");
     var item = document.getElementById("item");
     var category = document.getElementById("mySelect");
     var amount = document.getElementById("amount");
     var date = document.getElementById("date");
-    var mood = document.getElementById("myMood");
-    console.log("______________")
-    console.log(mood.value)
-    console.log(category.value)
-    console.log("______________")
+    var mood = document.getElementById("mood");
+    var trend = document.getElementById("trend");
+
     $.post("/add_purchase", 
     { 
       "item": item.value,
       "category": category.value, 
       "price": amount.value, 
       "date": date.value,
-      "mood": mood.value
+      "mood": mood.value,
+      "trend": trend.value
     }, function(data) {console.log("success!")});
 };
 </script>  
