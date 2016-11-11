@@ -50,7 +50,11 @@
        "mood": "Satisfied"
   }, {
        "mood": "Guilty"
-  }],
+  }, {
+       "mood": "Okay"
+  }
+
+  ],
   "login": "/",
   "index": "/index",
   "view": "/view",
