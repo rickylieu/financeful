@@ -2,17 +2,18 @@
 function appendObject(r){
   var fs = require('fs');
   var configFile = fs.readFileSync('./data.json');
+  var configFile2 = fs.readFileSync('public/data.json');
   var config = JSON.parse(configFile);
-  console.log("\n---\n");
-  console.log("append being called");
-  console.log("\n---\n");
+  var config2 = JSON.parse(configFile2);
   config.purchases.push(r);
+  config2.purchases.push(r);
   var configJSON = JSON.stringify(config, null, 4);
+  var configJSON2 = JSON.stringify(config2, null, 4);
   fs.writeFileSync('./data.json', configJSON);
+  fs.writeFileSync('public/data.json', configJSON2);
 }
 
 exports.addPurchase = function(req, res) {
-  //console.log(req.body);
   appendObject(req.body);
 }
 

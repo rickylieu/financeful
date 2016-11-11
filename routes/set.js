@@ -12,11 +12,15 @@ exports.set = function(req, res) {
 function appendObject(r){
   var fs = require('fs');
   var configFile = fs.readFileSync('./data.json');
-  //console.log(configFile)
+  var configFile2 = fs.readFileSync('public/data.json');
   var config = JSON.parse(configFile);
+  var config2 = JSON.parse(configFile2);
   config.categories.push(r);
+  config2.categories.push(r);
   var configJSON = JSON.stringify(config);
+  var configJSON2 = JSON.stringify(config2);
   fs.writeFileSync('./data.json', configJSON);
+  fs.writeFileSync('public/data.json', configJSON2); 
 }
 
 exports.addCategory = function(req, res) {
@@ -31,18 +35,17 @@ exports.removeCategory = function(req, res) {
 function deleteObject(r){
   var fs = require('fs');
   var configFile = fs.readFileSync('./data.json');
+  var configFile2 = fs.readFileSync('public/data.json');
   var config = JSON.parse(configFile);
-  console.log(config.categories.length);
+  var config2 = JSON.parse(configFile2);
   for (i = 0; i < config.categories.length; i++) {
     if (config.categories[i].category == r) {
-      console.log(config.categories.splice(i,1));
-      console.log("removing");
+      config.categories.splice(i,1);
+      config2.categories.splice(i,1);
     }
-      var configJSON = JSON.stringify(config);
+  var configJSON = JSON.stringify(config);
+  var configJSON2 = JSON.stringify(config2);
   fs.writeFileSync('./data.json', configJSON);
+  fs.writeFileSync('public/data.json', configJSON2);
   }
-  // delete config.categories[r]
-  // var configJSON = JSON.stringify(config);
-  // fs.writeFileSync('./data.json', configJSON);
-
 }
