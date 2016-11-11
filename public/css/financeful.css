@@ -1,7 +1,11 @@
 html,
 body {
+<<<<<<< HEAD
     font-family: 'Roboto', sans-serif;
     background-image: url("greenbg.jpg");	
+=======
+    background-image: url("white");	
+>>>>>>> 445b23c2410a1ecd0d1b3aa1e1a1b3988357dc68
 	width: 100%;
 	height: 100%;
 	margin: 0;

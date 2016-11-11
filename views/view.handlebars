@@ -25,40 +25,66 @@
       <div id = "pie_chart_category" align = "center"> 
       <script>
     
-      var prices=[]
-      var price;
-      var price1;
-      var price2;
-      var price3;
-        $.getJSON("data.json", function(data) { 
-            //console.log(data.key);
-          var i;
-          for(i=0; i < data.purchases.length; ++i) {
-            prices[i] = data.purchases[i].price;
+      var categories=[];
+      var moods =[];
+      var mood_count=new Array(5).join('0').split('').map(parseFloat);
+      var food_mood_count=new Array(5).join('0').split('').map(parseFloat);
+
+      var prices= new Array(5).join('0').split('').map(parseFloat);
+
+      var a = 0;
+      for(a = 0; a < prices.length; ++a) 
+        prices[a] = 0;
+      for(a = 0; a < mood_count.length; ++a) {
+        mood_count[a] = 0;
+        food_mood_count[a] = 0;
+      }
+        $.getJSON("../data.json", function(data) { 
+          //Categories chart
+          var i,j;
+          for(i=0; i < data.categories.length; ++i) {
+            categories[i] = data.categories[i].category;
+            for(j=0; j < data.purchases.length; ++j) {
+              if(data.purchases[j].category === categories[i]) {
+                prices[i] = prices[i] + +data.purchases[j].price;
+              }  
+            }
           }
-        /*  price =  data.purchases[0].price;
-          price1 =  data.purchases[1].price;
-          price2=  data.purchases[2].price;
-          price3 =  data.purchases[3].price;
-          console.log(price); */
-        console.log(prices[2]);
+
+          //Moods chart
+          for(i=0; i < data.moods.length; ++i) {
+            moods[i] = data.moods[i].mood;
+            for(j=0; j < data.purchases.length; ++j) {
+              if(data.purchases[j].mood === moods[i]) {
+                mood_count[i] = mood_count[i] + 1;
+                if(data.purchases[j].category == "Food")
+                  food_mood_count[i] = food_mood_count[i] + 1;
+              }  
+            }
+          }
+
+          console.log(food_mood_count[2]);
+
+
+
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
     
 
-       //nput = "['Category', 'Amount Spent']"
-        //Categories table
+        //Categories chart
         var data1 = google.visualization.arrayToDataTable([
         [ 'Category', 'Amount Spent'],
-          ['Entertainment', parseFloat(prices[0])],
-          ['Food', parseFloat(prices[1])],
-          ['Bills', parseFloat(prices[2])],
-          ['Travel', parseFloat(prices[3])]
+          [categories[0], prices[0]],
+          [categories[1], prices[1]],
+          [categories[2], prices[2]],
+          [categories[3], prices[3]]
         ]);  
 
         var options1 = {
           title: 'My Spending Report',
+          backgroundColor: 'white',
+          is3D: true,
         };
 
         var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -67,7 +93,6 @@
       };
 
         });
-        console.log("HULLOOO");
 
      
       </script>
@@ -82,11 +107,11 @@
 
         var data2 = google.visualization.arrayToDataTable([
           ['Mood', 'Occurrences per month'],
-          ['Okay',     11],
-          ['Happy',      15],
-          ['Resigned',  3],
-          ['Guilty', 10],
-          ['Sad',    4]
+          [moods[0],     mood_count[0]],
+          [moods[1],     mood_count[1]],
+          [moods[2],  mood_count[2]],
+          [moods[3], mood_count[3]],
+          [moods[4],    mood_count[4]]
         ]);
 
         var options = {
@@ -112,16 +137,16 @@
       function drawChart() {
 
         var data3 = google.visualization.arrayToDataTable([
-          ['Mood', 'Occurrences per month'],
-          ['Okay',     1],
-          ['Happy',      2],
-          ['Resigned',  0],
-          ['Guilty', 5],
-          ['Sad',    1]
+          ['Entertainment Mood', 'Occurrences per month'],
+          [moods[0],     food_mood_count[0]],
+          [moods[1],      food_mood_count[1]],
+          [moods[2],  food_mood_count[2]],
+          [moods[3], food_mood_count[3]],
+          [moods[4],    food_mood_count[4]]
         ]);
 
         var options = {
-          title: 'My Mood for Entertainment'
+          title: 'My Mood for Food'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
