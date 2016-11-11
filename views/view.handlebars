@@ -24,16 +24,37 @@
 
       <div id = "pie_chart_category" align = "center"> 
       <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart1);
-      function drawChart1() {
+    
+      var prices=[]
+      var price;
+      var price1;
+      var price2;
+      var price3;
+        $.getJSON("data.json", function(data) { 
+            //console.log(data.key);
+          var i;
+          for(i=0; i < data.purchases.length; ++i) {
+            prices[i] = data.purchases[i].price;
+          }
+        /*  price =  data.purchases[0].price;
+          price1 =  data.purchases[1].price;
+          price2=  data.purchases[2].price;
+          price3 =  data.purchases[3].price;
+          console.log(price); */
+        console.log(prices[2]);
+         google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart1);
+                 function drawChart1() {
+    
 
+       //nput = "['Category', 'Amount Spent']"
+        //Categories table
         var data1 = google.visualization.arrayToDataTable([
-          ['Category', 'Amount Spent'],
-          ['Entertainment', 50],
-          ['Food', 200],
-          ['Bills', 400],
-          ['Travel', 1000]
+        [ 'Category', 'Amount Spent'],
+          ['Entertainment', parseFloat(prices[0])],
+          ['Food', parseFloat(prices[1])],
+          ['Bills', parseFloat(prices[2])],
+          ['Travel', parseFloat(prices[3])]
         ]);  
 
         var options1 = {
@@ -44,6 +65,11 @@
 
         chart1.draw(data1, options1);
       };
+
+        });
+        console.log("HULLOOO");
+
+     
       </script>
       </div>
       <br>
