@@ -26,10 +26,14 @@
       <script>
     
       var spending_array = [];
+      var mood_array = [];
+      var food_mood_array = [];
       var categories=[];
       var moods =[];
-      var mood_count=new Array(5).join('0').split('').map(parseFloat);
-      var food_mood_count=new Array(5).join('0').split('').map(parseFloat);
+      var mood_count=new Array(6).join('0').split('').map(parseFloat);
+      var food_mood_count=new Array(6).join('0').split('').map(parseFloat);
+      var trends = [];
+      var trend_count = new Array(6).join('0').split('').map(parseFloat);
 
       var prices= new Array(5).join('0').split('').map(parseFloat);
 
@@ -64,10 +68,31 @@
               }  
             }
          }
+
+         //Buy again bar graph
+         for(i=0; i < data.trends.length; ++i) {
+            trends[i] = data.trends[i].trend;
+            for(j=0; j < data.purchases.length; ++j) {
+              if(data.purchases[j].trend == trends[i] ) {
+                trend_count[i] = trend_count[i] + 1;
+              }
+            }
+         }
+       //Make arrays to insert into google charts  
        spending_array[0] = ['Category', 'Amount Spent'];
          for(i=0; i < data.categories.length; ++i) {
           spending_array[i+1] = [categories[i], prices[i]];
          }
+       mood_array[0] = ['Mood', 'Occurrences'];
+        for(i=0; i < data.moods.length; ++i) {
+          mood_array[i+1] = [moods[i], mood_count[i]];
+         }  
+
+       food_mood_array[0] = ['Mood', 'Occurrences'];
+       for(i=0; i < data.moods.length; ++i) {
+         food_mood_array[i+1] = [ moods[i], food_mood_count[i] ];
+       }
+
          /*onsole.log(food_mood_count[2]);      
             spending_array[1] = [categories[0], prices[0]];
         spending_array[2] = [categories[1], prices[1]];
@@ -79,6 +104,7 @@
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
+                  console.log(trends[0]);
         
 
         //Categories chart
@@ -117,17 +143,13 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 
-        var data2 = google.visualization.arrayToDataTable([
-          ['Mood', 'Occurrences per month'],
-          [moods[0],     mood_count[0]],
-          [moods[1],     mood_count[1]],
-          [moods[2],  mood_count[2]],
-          [moods[3], mood_count[3]],
-          [moods[4],    mood_count[4]]
-        ]);
+        var data2 = google.visualization.arrayToDataTable(
+          mood_array
+        );
 
         var options = {
-          title: 'My Overall Mood Report'
+          title: 'My Overall Mood Report',
+          is3D: true,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
@@ -136,51 +158,91 @@
       }
     </script>      
   </div>
+
    <div id="piechart2" style="width: 900px; height: 500px;"></div>
+  
 
-
-      <br>
-
-
-      <div id = "pie_chart_category3" align = "center"> 
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 
-        var data3 = google.visualization.arrayToDataTable([
+        var data3 = google.visualization.arrayToDataTable(
+          food_mood_array
+          /*[
           ['Entertainment Mood', 'Occurrences per month'],
           [moods[0],     food_mood_count[0]],
           [moods[1],      food_mood_count[1]],
           [moods[2],  food_mood_count[2]],
           [moods[3], food_mood_count[3]],
           [moods[4],    food_mood_count[4]]
-        ]);
+        ]*/);
 
         var options = {
-          title: 'My Mood for Food'
+          title: 'My Mood for Food',
+          is3D: true,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
         chart.draw(data3, options);
       }
+
     </script>      
   </div>
    <div id="piechart3" style="width: 900px; height: 500px;"></div>
 
+     <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Trends", "Occurrences", { role: "style" } ],
+        [trends[0], 10, "#b87333"],
+        [trends[1], 15, "silver"],
+        [trends[2], parseFloat(trend_count[2]), "gold"],
+        [trends[3], parseFloat(trend_count[3]), "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Would you buy it again?",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+  <div id="barchart_values" style="width: 900px; height: 300px;" align="center"></div>
+
 
       <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-      <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
+     <!-- <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
 			<div id="title" align="center" style="font-size:600%; color:black" > Categories </div>
 			{{#each purchases}}
 			<tr>
+
 			 <a href="#" class="category" align="center" style="font-size:300%" id="{{category}}"> 
 			 	<h1> {{category}} </h1> </a> 
 			 {{/each}}
 			</tr>
+    -->
             <div align="center"> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </div>
 
    		<div id="home" align="center" style="font-size:150%">
