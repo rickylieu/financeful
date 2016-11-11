@@ -73,6 +73,7 @@
          for(i=0; i < data.trends.length; ++i) {
             trends[i] = data.trends[i].trend;
             for(j=0; j < data.purchases.length; ++j) {
+              console.log(data.purchases[j].mood);
               if(data.purchases[j].trend == trends[i] ) {
                 trend_count[i] = trend_count[i] + 1;
               }
@@ -104,7 +105,7 @@
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
-                  console.log(trends[0]);
+                  console.log(trend_count[1]);
         
 
         //Categories chart

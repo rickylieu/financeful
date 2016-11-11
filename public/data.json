@@ -4,25 +4,29 @@
     "category": "Entertainment",
     "price": "13.56",
     "date": "10/23/16",
-    "mood": "Happy"
+    "mood": "Happy",
+    "trend": "Definitely"
   }, {
     "item": "Groceries",
     "category": "Food",
     "price": "200.50",
     "date": "10/25/16",
-    "mood": "Satisfied"
+    "mood": "Satisfied",
+    "trend": "I have to"
   }, {
     "item": "Rent",
     "category": "Bills",
     "price": "650.00",
     "date": "10/28/16",
-    "mood": "Sad"
+    "mood": "Sad",
+    "trend": "I have to"
   }, {
     "item": "Plane ticket",
     "price": "2050.21",
     "category": "Travel",
     "date": "11/1/16",
-    "mood": "Guilty"
+    "mood": "Guilty",
+    "trend": "Not sure"
   }],
   "categories": [{
        "category": "Entertainment"
