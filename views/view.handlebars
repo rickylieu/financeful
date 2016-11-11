@@ -30,8 +30,10 @@
       var food_mood_array = [];
       var categories=[];
       var moods =[];
-      var mood_count=new Array(100).join('0').split('').map(parseFloat);
-      var food_mood_count=new Array(100).join('0').split('').map(parseFloat);
+      var mood_count=new Array(6).join('0').split('').map(parseFloat);
+      var food_mood_count=new Array(6).join('0').split('').map(parseFloat);
+      var trends = [];
+      var trend_count = new Array(6).join('0').split('').map(parseFloat);
 
       var prices= new Array(5).join('0').split('').map(parseFloat);
 
@@ -66,6 +68,17 @@
               }  
             }
          }
+
+         //Buy again bar graph
+         for(i=0; i < data.trends.length; ++i) {
+            trends[i] = data.trends[i].trend;
+            for(j=0; j < data.purchases.length; ++j) {
+              if(data.purchases[j].trend == trends[i] ) {
+                trend_count[i] = trend_count[i] + 1;
+              }
+            }
+         }
+       //Make arrays to insert into google charts  
        spending_array[0] = ['Category', 'Amount Spent'];
          for(i=0; i < data.categories.length; ++i) {
           spending_array[i+1] = [categories[i], prices[i]];
@@ -91,6 +104,7 @@
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
+                  console.log(trends[0]);
         
 
         //Categories chart
@@ -144,13 +158,10 @@
       }
     </script>      
   </div>
+
    <div id="piechart2" style="width: 900px; height: 500px;"></div>
+  
 
-
-      <br>
-
-
-      <div id = "pie_chart_category3" align = "center"> 
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -176,11 +187,49 @@
 
         chart.draw(data3, options);
       }
+
     </script>      
   </div>
    <div id="piechart3" style="width: 900px; height: 500px;"></div>
 
+     <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Trends", "Occurrences", { role: "style" } ],
+        [trends[0], 10, "#b87333"],
+        [trends[1], 15, "silver"],
+        [trends[2], parseFloat(trend_count[2]), "gold"],
+        [trends[3], parseFloat(trend_count[3]), "color: #e5e4e2"]
+      ]);
 
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Would you buy it again?",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+  <div id="barchart_values" style="width: 900px; height: 300px;" align="center"></div>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
       <br>
 
      <!-- <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
