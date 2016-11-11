@@ -36,17 +36,20 @@
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
-
+        var input = 150;
+        var input2 = 200;
+        var input3 = 250;
+        var input4 = 300;
 
        //nput = "['Category', 'Amount Spent']"
         //Categories table
         console.log(input[1]);
         var data1 = google.visualization.arrayToDataTable([
         [ 'Category', 'Amount Spent'],
-          ['Entertainment', input[0]],
-          ['Food', 200],
-          ['Bills', 400],
-          ['Travel', 1000]
+          ['Entertainment', input],
+          ['Food', input2],
+          ['Bills', input3],
+          ['Travel', input4]
         ]);  
 
         var options1 = {
