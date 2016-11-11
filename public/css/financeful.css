@@ -41,9 +41,8 @@ a {
 
 table, th, td {
 	text-align: center;
-	font-size: 300%;
+	font-size: 100%;
 	border: 3px solid black;
-	background-color: gold;
 	padding: 10px;
 }
 
