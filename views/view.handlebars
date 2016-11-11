@@ -114,8 +114,6 @@
         spending_array[3] = [categories[2], prices[2]];
         spending_array[4] = [categories[3], prices[3]];*/
 
-
-
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
                  function drawChart1() {
@@ -135,7 +133,8 @@
         ]*/);  
 
         var options1 = {
-          title: 'My Spending Report',
+          titlePosition: 'none',
+          align: "center",
           backgroundColor: 'white',
           is3D: true,
           'legend': {'position': 'bottom'},
@@ -154,6 +153,8 @@
      
       </script>
       </div>
+             <h1 align="center" > My Spending Report </h1>
+
          <div id="piechart" style="width: 100%; height: 50%;"></div>
 
       <br>
@@ -167,7 +168,7 @@
         );
 
         var options = {
-          title: 'My Overall Mood Report',
+          titlePosition: 'none',
           is3D: true,
          'legend': {'position': 'bottom'},
           'chartArea': {'width': '100%', 'height': '80%'},
@@ -181,6 +182,7 @@
       }
     </script>      
   </div>
+               <h1 align="center" > My Overall Mood Report </h1>
      <div id="piechart2" style="width: 100%; height: 50%;"></div>
 
     <script type="text/javascript">
@@ -200,7 +202,7 @@
         ]*/);
 
         var options = {
-          title: 'My Mood for Food',
+          titlePosition: 'none',
           is3D: true,
           'legend': {'position': 'bottom'},
           'chartArea': {'width': '100%', 'height': '80%'},
@@ -215,6 +217,7 @@
 
     </script>      
   </div>
+  <h1 align="center"> My Mood Report for Food </h1>
    <div id="piechart3" style="width: 100%; height: 50%;"></div>
 
 
