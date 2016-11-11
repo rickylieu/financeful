@@ -24,13 +24,26 @@
 
       <div id = "pie_chart_category" align = "center"> 
       <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart1);
-      function drawChart1() {
+   
+      var input = [];
+        $.getJSON("data.json", function(data) { 
+            //console.log(data.key);
+            var i = 0;
+               for( i=0; i < data.purchases.length; ++i) {
+                 input[i] = data.purchases[i].price;
+                 console.log(input[i]);
+                }
+         google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart1);
+                 function drawChart1() {
 
+
+       //nput = "['Category', 'Amount Spent']"
+        //Categories table
+        console.log(input[1]);
         var data1 = google.visualization.arrayToDataTable([
-          ['Category', 'Amount Spent'],
-          ['Entertainment', 50],
+        [ 'Category', 'Amount Spent'],
+          ['Entertainment', input[0]],
           ['Food', 200],
           ['Bills', 400],
           ['Travel', 1000]
@@ -44,6 +57,11 @@
 
         chart1.draw(data1, options1);
       };
+
+        });
+        console.log("HULLOOO");
+
+     
       </script>
       </div>
       <br>
