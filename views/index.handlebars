@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<script src="/js/jquery-1.11.0.js" ></script>
 	<script src="/js/financeful.js" ></script>
     <script src="/js/bootstrap.js" ></script>
@@ -12,27 +13,21 @@
 <body>
 	<p> Financeful </p> 
 
-	<div class="menu" >
-		<img src="images/plus.png" height="150" width="150">
-		<a href="{{add_purchase}}"> Add </a>
-	</div>
-	<br>
-	<div class="menu" >
-	    <img src="images/glasses.png" height="150" width="150"> 
-		<a href="{{view}}"> View </a> 
+	<div class = "container">
+	
+	<ul class="nav nav-pills nav-stacked">
 
+	<li class="active"><a href= "{{add_purchase}}">Add Purchase</a></li>
+	<li class="active"><a href= "{{view}}">View Data</a></li>
+	<li class="active"><a href= "{{set}}">Manage Settings</a></li>
+	</ul>
 	</div>
-	<br>
-	<div class="menu" >
-		<img src="images/checkmark.png" height="150" width="150">
-		<a href="{{set}}"> Set </a>
-		<br>
-	</div>
+
     <br>
     
     <div class="back" >
     <a href="javascript:history.back()">
-    	<img src="images/back.png" height="200" width="300" align="left" style="PADDING-LEFT: 100px;">
+    	<img src="images/back.png" height="200" width="300" align="left" style="padding-left: 100px;">
     </a>	
     </div>
 </body>
