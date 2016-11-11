@@ -26,10 +26,12 @@
       <script>
     
       var spending_array = [];
+      var mood_array = [];
+      var food_mood_array = [];
       var categories=[];
       var moods =[];
-      var mood_count=new Array(5).join('0').split('').map(parseFloat);
-      var food_mood_count=new Array(5).join('0').split('').map(parseFloat);
+      var mood_count=new Array(100).join('0').split('').map(parseFloat);
+      var food_mood_count=new Array(100).join('0').split('').map(parseFloat);
 
       var prices= new Array(5).join('0').split('').map(parseFloat);
 
@@ -68,6 +70,16 @@
          for(i=0; i < data.categories.length; ++i) {
           spending_array[i+1] = [categories[i], prices[i]];
          }
+       mood_array[0] = ['Mood', 'Occurrences'];
+        for(i=0; i < data.moods.length; ++i) {
+          mood_array[i+1] = [moods[i], mood_count[i]];
+         }  
+
+       food_mood_array[0] = ['Mood', 'Occurrences'];
+       for(i=0; i < data.moods.length; ++i) {
+         food_mood_array[i+1] = [ moods[i], food_mood_count[i] ];
+       }
+
          /*onsole.log(food_mood_count[2]);      
             spending_array[1] = [categories[0], prices[0]];
         spending_array[2] = [categories[1], prices[1]];
@@ -117,17 +129,13 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 
-        var data2 = google.visualization.arrayToDataTable([
-          ['Mood', 'Occurrences per month'],
-          [moods[0],     mood_count[0]],
-          [moods[1],     mood_count[1]],
-          [moods[2],  mood_count[2]],
-          [moods[3], mood_count[3]],
-          [moods[4],    mood_count[4]]
-        ]);
+        var data2 = google.visualization.arrayToDataTable(
+          mood_array
+        );
 
         var options = {
-          title: 'My Overall Mood Report'
+          title: 'My Overall Mood Report',
+          is3D: true,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
@@ -148,17 +156,20 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
 
-        var data3 = google.visualization.arrayToDataTable([
+        var data3 = google.visualization.arrayToDataTable(
+          food_mood_array
+          /*[
           ['Entertainment Mood', 'Occurrences per month'],
           [moods[0],     food_mood_count[0]],
           [moods[1],      food_mood_count[1]],
           [moods[2],  food_mood_count[2]],
           [moods[3], food_mood_count[3]],
           [moods[4],    food_mood_count[4]]
-        ]);
+        ]*/);
 
         var options = {
-          title: 'My Mood for Food'
+          title: 'My Mood for Food',
+          is3D: true,
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
@@ -172,15 +183,17 @@
 
       <br>
 
-      <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
+     <!-- <div id="status" align="center" style="font-size:200%; color:black"> Click a category to check how much you've spent! </div>
 
 			<div id="title" align="center" style="font-size:600%; color:black" > Categories </div>
 			{{#each purchases}}
 			<tr>
+
 			 <a href="#" class="category" align="center" style="font-size:300%" id="{{category}}"> 
 			 	<h1> {{category}} </h1> </a> 
 			 {{/each}}
 			</tr>
+    -->
             <div align="center"> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </div>
 
    		<div id="home" align="center" style="font-size:150%">
