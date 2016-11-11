@@ -143,6 +143,10 @@ text-align:  left;
     text-align: center;
 }
 
+.dropdown-backdrop {
+    position:  static;
+}
+
 /*.jumbotron p {
 	text-align: center;
 	background-color: red;
