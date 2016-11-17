@@ -45,6 +45,7 @@ app.get('/', login.login);
 app.get('/index', index.view);
 app.get('/add_purchase', add_purchase.view);
 app.get('/view', view.view);
+app.get('/view2', view.viewButton);
 app.get('/set', set.set);
 app.get('/mood', mood.mood);
 app.get('/history', history.checkHistory)

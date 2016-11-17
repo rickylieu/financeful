@@ -1,121 +1,41 @@
 {
-  "purchases": [{
-    "item": "Games",
-    "category": "Entertainment",
-    "price": "13.56",
-    "date": "10/23/16",
-    "mood": "Happy",
-    "trend": "Definitely"
-  }, {
-    "item": "Groceries",
-    "category": "Food",
-    "price": "200.50",
-    "date": "10/25/16",
-    "mood": "Satisfied",
-    "trend": "I have to"
-  }, {
-    "item": "Rent",
-    "category": "Bills",
-    "price": "650.00",
-    "date": "10/28/16",
-    "mood": "Sad",
-    "trend": "I have to"
-  }, {
-    "item": "Plane ticket",
-    "price": "2050.21",
-    "category": "Travel",
-    "date": "11/1/16",
-    "mood": "Guilty",
-    "trend": "Not sure"
-  }],
-  "categories": [{
-       "category": "Entertainment"
-  }, {
-       "category": "Food"
-  }, {
-       "category": "Bills"
-  }, {
-       "category": "Travel"
-  }],
-  "trends": [{
-       "trend": "Definitely"
-  }, {
-       "trend": "Not Sure"
-  }, {
-       "trend": "No"
-  }, {
-       "trend": "I have to"
-  }],
-    "moods": [{
-       "mood": "Happy"
-  }, {
-       "mood": "Sad"
-  }, {
-       "mood": "Satisfied"
-  }, {
-       "mood": "Guilty"
-  }, {
-       "mood": "Okay"
-  }
-
-  ],
-  "login": "/",
-  "index": "/index",
-  "view": "/view",
-  "set": "/set",
-  "add_purchase": "/add_purchase",
-  "mood": "/mood",
-  "history": "/history",
     "purchases": [
         {
             "item": "Games",
             "category": "Entertainment",
             "price": "13.56",
-            "date": "10/23/16",
+            "date": "2016-10-23",
             "mood": "Happy"
         },
         {
             "item": "Groceries",
             "category": "Food",
             "price": "200.50",
-            "date": "10/25/16",
+            "date": "2016-10-25",
             "mood": "Satisfied"
         },
         {
             "item": "Rent",
             "category": "Bills",
             "price": "650.00",
-            "date": "10/28/16",
+            "date": "2016-10-28",
             "mood": "Sad"
         },
         {
             "item": "Plane ticket",
             "price": "2050.21",
             "category": "Travel",
-            "date": "11/1/16",
+            "date": "2016-11-01",
             "mood": "Guilty"
         },
         {
             "item": "Ramen",
             "category": "Food",
             "price": "15",
-            "date": "11/08/2016",
+            "date": "2016-11-08",
             "mood": "Okay"
-        },
-        {
-            "item": "Pizza",
-            "category": "Food",
-            "price": "2000",
-            "date": "11/18/2016",
-            "mood": "Happy"
-        },
-        {
-            "item": "PS4",
-            "category": "Entertainment",
-            "price": "2050",
-            "date": "11-16-16",
-            "mood": "Guilty"
         }
+        
     ],
     "categories": [
         {

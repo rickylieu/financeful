@@ -16,7 +16,7 @@
 <body>
 <div class = "container">
    <div class="page-header">
-    <h1>Financeful</h1>
+    <h1 align="center">Financeful</h1>
   </div>
      
 
@@ -31,9 +31,12 @@
     <li><a href="{{set}}">Manage Settings</a></li>
   </ul>
 </div>
-
+ 
+  {{#if button}}
+  <div align="center"> <a href="{{history}}" button class="btn btn-primary" type="button"> See full purchase history </a> </button> 
+  {{else}}
   <div align="center"> <a href="{{history}}" style="font-size:200%; color:black"> See full purchase history </a></div>
-  
+   {{/if}} 
     </div>
 </body>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
