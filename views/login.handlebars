@@ -1,38 +1,46 @@
 <!doctype html>
 <html>
-<head> 
-	<script src="/js/jquery-1.11.0.js" ></script>
+   <html>
+  <head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content = "IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Rufina" rel="stylesheet">
+  <script src="/js/jquery-1.11.0.js" ></script>
   <script src="/js/financeful.js" ></script>
     <script src="/js/bootstrap.js" ></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-         <link href="css/financeful.css" rel="stylesheet">
-    <h1 id="login_title" style="color: black; font-size: 70px"> Welcome back to Financeful! </h1>
-          
-</head>
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/financeful.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+  </head>
 
-<div class = "login" style="font-size:40px; padding-top: 50px" align="center" >
-<div class = "username">
-    <label for="username">Username</label>
-      <input name="username" id="username" type="text" /> 
+
+
+<div class = "container">
+
+    <form>  
+   
+        <div class="form-group">
+         <h2 class="">Please login</h2>
+
+      <div class="form-group">
+      <label for="exampleTextarea"></label>
+        <textarea class="form-control" id="username" rows="1"></textarea>
+      </div>    
+
+    <div class="form-group">
+      <label for="exampleTextarea"></label>
+        <textarea class="form-control" id="password" rows="1"></textarea>
+      </div>      
+
+       <div class="form-group">
+    <a href="{{login}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick = "checklogin()" id = "dynamicLink">Login</a>
   </div>
-
-  <div class = "password">
-    <label for="password">Password</label>
-      <input type="password" name="password" id="password" type="text" /> 
+    </form>
+    
   </div>
-
-  <div class = "submit" align="center" id = "link">
-    <label for="submit"></label>
-      <a id = "dynamicLink" href="{{index}}"> 
-      <input type="submit" name="submit" id="submit" onclick = "checklogin()"/>
-      </a>
-  </div>
-</div>  
-
 
 <script>
-
 function checklogin(){
     console.log("hi");
     var username = document.getElementById("username");
@@ -40,10 +48,12 @@ function checklogin(){
     var element = document.getElementById("dynamicLink");
     console.log(username.value);
     console.log(password.value);
+    console.log(element);
     if (username.value == "cse170" && password.value == "financeful") {
       element.href = "/index";
     }
     else {
+      console.log("false")
        element.href = "/";
     }
 
