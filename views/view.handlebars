@@ -216,12 +216,12 @@
   <br>
    <div class="form-group" align="center" style="width:60%">
     <label for="exampleSelect1">Choose a category for your mood report!</label>
-    <select class="form-control" id="mySelect">
+    <select class="form-control" id="mySelect" onclick = "getdata()">
         {{#each categories}}
           <option value={{category}}> {{category}}</option> 
         {{/each}}
     </select>
-  <button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button>
+ <!-- <button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button> -->
     </div>
   <script>
 function getdata(){
