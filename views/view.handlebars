@@ -158,6 +158,7 @@
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
+
       function drawChart() {
 
         var data2 = google.visualization.arrayToDataTable(
@@ -179,7 +180,10 @@
       }
     </script>      
   </div>
-      <h1 align="center" > My Overall Mood Report </h1>
+      
+
+
+  <h1 align="center" > My Overall Mood Report </h1>
      <div id="piechart2" style="width: 100%; height: 50%;"></div>
 
     <script type="text/javascript">
@@ -203,10 +207,78 @@
         chart.draw(data3, options);
       }
 
-    </script>      
-  </div>
-  <h1 align="center"> My Mood Report for Food </h1>
+    </script>   
+
+  <h1 align="center"> My Mood Report</h1>
    <div id="piechart3" style="width: 100%; height: 50%;"></div>
+
+  </div>
+  <br>
+   <div class="form-group" style="width:30%">
+    <label for="exampleSelect1">Choose a category for your mood report!</label>
+    <select class="form-control" id="mySelect">
+        {{#each categories}}
+          <option value={{category}}> {{category}}</option> 
+        {{/each}}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button>
+  <script>
+function getdata(){
+    var category = document.getElementById("mySelect");
+    var category_array = [];
+    var array = [];
+  
+   // var category_mood_count = [];
+    $.getJSON("./data.json", function(data) { 
+        array =  [['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]]
+       var category_mood_count=new Array(data.moods.length).join('0').split('').map(parseFloat);
+        for(a = 0; a < data.moods.length; ++a) {
+          category_mood_count[a] = 0;
+        }
+
+         //Moods chart
+          for(i=0; i < data.moods.length; ++i) {
+            moods[i] = data.moods[i].mood;
+            for(j=0; j < data.purchases.length; ++j) {
+              if(data.purchases[j].mood === moods[i]) {
+                mood_count[i] = mood_count[i] + 1;
+                if(data.purchases[j].category == category.value) {
+                  category_mood_count[i] = category_mood_count[i] + 1;
+                }  
+              }  
+            }
+         }
+         category_array[0] = ['Mood', 'Occurrences'];
+         for(i=0; i < data.moods.length; ++i) {
+          category_array[i+1] = [moods[i], category_mood_count[i]];
+          console.log(category_array[i+1]);
+         }
+          var data3 = google.visualization.arrayToDataTable(
+          category_array
+          );
+
+        var options = {
+          titlePosition: 'none',
+          is3D: true,
+          'legend': {'position': 'bottom'},
+          'chartArea': {'width': '100%', 'height': '80%'},
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+
+        chart.draw(data3, options);
+         
+    });   
+   
+};
+</script>  
+
 
 
    <script type="text/javascript">
