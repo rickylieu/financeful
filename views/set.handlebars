@@ -33,65 +33,100 @@
   </ul>
 </div>
 
-  <br>
-  <br>
-
+<p class="h3">Manange Categories</p>
 
 <form>
   <div class="form-group">
-    <label for="exampleTextarea">add a category</label>
+    <label for="exampleTextarea">Add a Category</label>
     <textarea class="form-control" id="item" rows="1"></textarea>
   </div>
 
 
-  <button type="submit" class="btn btn-primary" onclick = "addcategory()"> add</button>
-
+  <button type="submit" class="btn btn-primary center-block" onclick = "addcategory()">Add Category</button>
 
   <div class="form-group">
-    <label for="exampleSelect1">remove a category</label>
+    <label for="exampleSelect1">Remove a Category</label>
+    <br>
     <select class="form-control" id="mySelect">
         {{#each categories}}
           <option value={{category}}> {{category}}</option> 
         {{/each}}
     </select>
   </div>
+  <button type="submit" class="btn btn-primary center-block" onclick = "removecategory()">Remove Category</button>
+
+</form>
+
+<p class="h3">Manange Moods</p>
+
+<form>
+  <div class="form-group">
+    <label for="exampleTextarea">Add a Mood</label>
+    <textarea class="form-control" id="mood_input" rows="1"></textarea>
+  </div>
 
 
-  <button type="submit" class="btn btn-primary" onclick = "removecategory()"> remove</button>
+  <button type="submit" class="btn btn-primary center-block" onclick = "addmood()">Add Mood </button>
 
-  </form>
+  <div class="form-group">
+    <label for="exampleSelect1">Remove a Mood</label>
+    <br>
+    <select class="form-control" id="mymood">
+        {{#each moods}}
+          <option value={{category}}> {{mood}}</option> 
+        {{/each}}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary center-block" onclick = "removemood()">Remove Mood</button>
+
+</form>
+
 
 </div>
 </body>
 
-
     <script>
+
+
         function removecategory() {
-          console.log("remove being called")
-        var data = document.getElementById("mySelect");
+          
+          var data = document.getElementById("mySelect");
           $.post("/set/remove", 
             { 
               "category": data.value
             }, 
             function(data) {
-              //console.log("success!");
-              alert(data);
-            }
-
-          );
-
-        }
+            })};
 
         function addcategory(){
-            console.log("add called")
+           
           var data = document.getElementById("item");
-          console.log(data.value)
-
           $.post("/set", 
           { 
             "category": data.value
-        }, function(data) {console.log("success!")});
-      }
+        }, function(data) {console.log("success!")})};
+
+
+        function removemood() {
+          
+          var data = document.getElementById("mymood");
+          $.post("/set/removemood", 
+            { 
+              "mood": data.value
+            }, 
+            function(data) {
+            })};
+
+        function addmood(){
+           
+          var data = document.getElementById("mood_input");
+          $.post("/set/addmood", 
+          { 
+            "mood": data.value
+        }, function(data) {console.log("success!")})};
+
+
+
     </script>
     
-  	</html>
+</html>
