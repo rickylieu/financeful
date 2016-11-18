@@ -52,6 +52,8 @@ app.get('/history', history.checkHistory)
 app.post('/add_purchase', add_purchase.addPurchase)
 app.post('/set', set.addCategory)
 app.post('/set/remove', set.removeCategory)
+app.post('/set/addmood', set.addmood)
+app.post('/set/removemood', set.removemood)
 
 
 
