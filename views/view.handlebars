@@ -92,7 +92,7 @@
          for(i=0; i < data.trends.length; ++i) {
             trends[i] = data.trends[i].trend;
             for(j=0; j < data.purchases.length; ++j) {
-            //  console.log(data.purchases[j].trend);
+              console.log(data.purchases[j].trend);
               if(data.purchases[j].trend == trends[i] ) {
                 trend_count[i] = trend_count[i] + 1;
               }
@@ -116,7 +116,7 @@
        trend_array[0] = ["Repurchase", "Occurrences"];
        for(i=0; i < data.trends.length; ++i) {
         trend_array[i+1] = [ trends[i], trend_count[i] ];
-        console.log(trend_array[i+1]);
+       // console.log(trends[i]);
        }
 
 
