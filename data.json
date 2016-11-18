@@ -5,35 +5,40 @@
             "category": "Entertainment",
             "price": "13.56",
             "date": "2016-10-23",
-            "mood": "Happy"
+            "mood": "Happy",
+            "trend": "Definitely"
         },
         {
             "item": "Groceries",
             "category": "Food",
             "price": "200.50",
             "date": "2016-10-25",
-            "mood": "Satisfied"
+            "mood": "Satisfied",
+            "trend": "Not Sure"
         },
         {
             "item": "Rent",
             "category": "Bills",
             "price": "650.00",
             "date": "2016-10-28",
-            "mood": "Sad"
+            "mood": "Sad",
+            "trend": "I have to"
         },
         {
             "item": "Plane ticket",
             "price": "2050.21",
             "category": "Travel",
             "date": "2016-11-01",
-            "mood": "Guilty"
+            "mood": "Guilty",
+            "trend": "Not Sure" 
         },
         {
             "item": "Ramen",
             "category": "Food",
             "price": "15",
             "date": "2016-11-08",
-            "mood": "Okay"
+            "mood": "Okay",
+            "trend": "Not Sure"
         },
         {
             "item": "Carne Asada Fries",
