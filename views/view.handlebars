@@ -82,7 +82,7 @@
             for(j=0; j < data.purchases.length; ++j) {
               if(data.purchases[j].mood === moods[i]) {
                 mood_count[i] = mood_count[i] + 1;
-                if(data.purchases[j].category == "Food")
+                if(data.purchases[j].category == categories[0])
                   food_mood_count[i] = food_mood_count[i] + 1;
               }  
             }
