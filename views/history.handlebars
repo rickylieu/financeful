@@ -115,6 +115,10 @@ function myFunction() {
       num = 4;
     }
 
+    if (filter_index.value == "repurchase") {
+      num = 5;
+    }
+    
     console.log(filter_index.value);
     for (i = 0; i < tr.length; i++) {
             element = tr[i].getElementsByTagName("td")[num];

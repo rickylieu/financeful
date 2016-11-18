@@ -197,6 +197,12 @@ input[type="password"] {
   margin:0px auto; //it will center them 
 }
 
+.bgSizeContain {
+    font-size: 50px;
+  background-image: url("../44");
+  height:  500px;
+  width:  400px;
+}
 /*.jumbotron p {
 	text-align: center;
 	background-color: red;
