@@ -34,8 +34,15 @@
             "price": "15",
             "date": "2016-11-08",
             "mood": "Okay"
+        },
+        {
+            "item": "Carne Asada Fries",
+            "category": "Entertainment",
+            "price": "7",
+            "date": "2016-11-17",
+            "mood": "Satisfied",
+            "trend": "Definitely"
         }
-        
     ],
     "categories": [
         {

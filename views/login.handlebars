@@ -21,19 +21,20 @@
     <form>  
    
         <div class="form-group">
-         <h2 class="">Please login</h2>
+        <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+        <hr class="colorgraph"><br>
 
-      <div class="form-group">
-      <label for="exampleTextarea"></label>
-        <textarea class="form-control" id="username" rows="1"></textarea>
-      </div>    
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="password" placeholder="Password">
+  </div>  
 
-    <div class="form-group">
-      <label for="exampleTextarea"></label>
-        <textarea class="form-control" id="password" rows="1"></textarea>
-      </div>      
-
-       <div class="form-group">
+  <div class="form-group">
     <a href="{{login}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" onclick = "checklogin()" id = "dynamicLink">Login</a>
   </div>
     </form>
@@ -43,13 +44,13 @@
 <script>
 function checklogin(){
     console.log("hi");
-    var username = document.getElementById("username");
+    var username = document.getElementById("email");
     var password = document.getElementById("password");
     var element = document.getElementById("dynamicLink");
     console.log(username.value);
     console.log(password.value);
     console.log(element);
-    if (username.value == "cse170" && password.value == "financeful") {
+    if (username.value == "cse170@ucsd.edu" && password.value == "financeful") {
       element.href = "/index";
     }
     else {

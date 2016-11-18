@@ -15,21 +15,26 @@
 
 <body>
 <div class = "container">
-   <div class="page-header">
-    <h1>Financeful</h1>
+    <div class="page-header">
+      <h1>Financeful</h1>
+    </div>
+
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <span class="glyphicon glyphicon-list"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="{{index}}">Home</a></li>
+      <li><a href="{{add_purchase}}">Add Purchase</a></li>
+      <li><a href="{{view}}">View Data</a></li>
+      <li><a href="{{set}}">Manage Settings</a></li>
+    </ul>
   </div>
 
-    <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <span class="glyphicon glyphicon-list"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="{{index}}">Home</a></li>
-    <li><a href="{{add_purchase}}">Add Purchase</a></li>
-    <li><a href="{{view}}">View Data</a></li>
-    <li><a href="{{set}}">Manage Settings</a></li>
-  </ul>
-</div>
+  <br>
+  <br>
+
+
 
 
       <h1 id="history" style="color: white; font-size: 100%" align="center"> History </h1>
