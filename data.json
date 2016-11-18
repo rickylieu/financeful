@@ -47,6 +47,14 @@
             "date": "2016-11-17",
             "mood": "Satisfied",
             "trend": "Definitely"
+        },
+        {
+            "item": "DisneyLand",
+            "category": "Entertainment",
+            "price": "200",
+            "date": "2016-11-17",
+            "mood": "Guilty",
+            "trend": "Not Sure"
         }
     ],
     "categories": [

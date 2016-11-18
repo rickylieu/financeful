@@ -84,8 +84,8 @@
     </select>
 </div>
 
-<button type="submit" class="btn btn-primary pull-right" onclick = "getdata()">Add</button>
-</form>
+<a href = "{{view}}"" class="btn btn-primary btn-lg active center-block" id = "add_submit" onclick = "getdata()">Add</a>
+  </form>
 
 
 </div>
@@ -103,6 +103,7 @@ function getdata(){
     var date = document.getElementById("date");
     var mood = document.getElementById("mood");
     var trend = document.getElementById("trend");
+    var element = document.getElementById("add_submit");
     console.log(trend.value);
 
     $.post("/add_purchase", 
