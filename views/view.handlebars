@@ -52,6 +52,7 @@
       var food_mood_count=new Array(6).join('0').split('').map(parseFloat);
       var trends = [];
       var trend_count = new Array(6).join('0').split('').map(parseFloat);
+      var trend_array = [];
 
       var prices= new Array(5).join('0').split('').map(parseFloat);
 
@@ -91,7 +92,7 @@
          for(i=0; i < data.trends.length; ++i) {
             trends[i] = data.trends[i].trend;
             for(j=0; j < data.purchases.length; ++j) {
-              console.log(data.purchases[j].trend);
+            //  console.log(data.purchases[j].trend);
               if(data.purchases[j].trend == trends[i] ) {
                 trend_count[i] = trend_count[i] + 1;
               }
@@ -112,29 +113,21 @@
          food_mood_array[i+1] = [ moods[i], food_mood_count[i] ];
        }
 
-         /*onsole.log(food_mood_count[2]);      
-            spending_array[1] = [categories[0], prices[0]];
-        spending_array[2] = [categories[1], prices[1]];
-        spending_array[3] = [categories[2], prices[2]];
-        spending_array[4] = [categories[3], prices[3]];*/
+       trend_array[0] = ["Repurchase", "Occurrences"];
+       for(i=0; i < data.trends.length; ++i) {
+        trend_array[i+1] = [ trends[i], trend_count[i] ];
+        console.log(trend_array[i+1]);
+       }
+
 
          google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart1);
-                 function drawChart1() {
-                  console.log(trend_count[1]);
-        
+                 function drawChart1() {        
 
         //Categories chart
         var data1 = google.visualization.arrayToDataTable(
           spending_array
-          /*
-          [ 
-        [ 'Category', 'Amount Spent'],
-          [categories[0], prices[0]],
-          [categories[1], prices[1]],
-          [categories[2], prices[2]],
-          [categories[3], prices[3]]
-        ]*/);  
+         );  
 
         var options1 = {
           titlePosition: 'none',
@@ -186,7 +179,7 @@
       }
     </script>      
   </div>
-               <h1 align="center" > My Overall Mood Report </h1>
+      <h1 align="center" > My Overall Mood Report </h1>
      <div id="piechart2" style="width: 100%; height: 50%;"></div>
 
     <script type="text/javascript">
@@ -203,8 +196,6 @@
           is3D: true,
           'legend': {'position': 'bottom'},
           'chartArea': {'width': '100%', 'height': '80%'},
-
-
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
@@ -216,6 +207,36 @@
   </div>
   <h1 align="center"> My Mood Report for Food </h1>
    <div id="piechart3" style="width: 100%; height: 50%;"></div>
+
+
+   <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable(
+        trend_array
+      );
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" }
+                    ]);
+
+      var options = {
+        title: "Willingness to Repurchase",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="barchart_values" align="center"style="width: 900px; height: 300px;"></div>
 
 
 </html>

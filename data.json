@@ -14,7 +14,7 @@
             "price": "200.50",
             "date": "2016-10-25",
             "mood": "Satisfied",
-            "trend": "Not Sure"
+            "trend": "Definitely"
         },
         {
             "item": "Rent",
@@ -22,7 +22,7 @@
             "price": "650.00",
             "date": "2016-10-28",
             "mood": "Sad",
-            "trend": "I have to"
+            "trend": "Definitely"
         },
         {
             "item": "Plane ticket",
@@ -30,7 +30,7 @@
             "category": "Travel",
             "date": "2016-11-01",
             "mood": "Guilty",
-            "trend": "Not Sure" 
+            "trend": "Definitely"
         },
         {
             "item": "Ramen",
@@ -38,7 +38,7 @@
             "price": "15",
             "date": "2016-11-08",
             "mood": "Okay",
-            "trend": "Not Sure"
+            "trend": "Definitely"
         },
         {
             "item": "Carne Asada Fries",

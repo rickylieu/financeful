@@ -78,7 +78,7 @@
     <label for="exampleSelect1">Would you buy it again</label>
     <select class="form-control" id="trend">
         {{#each trends}}
-          <option value={{trend}}> {{trend}}</option> 
+          <option value="{{trend}}"> {{trend}}</option> 
         {{/each}}
     </select>
 </div>
@@ -102,6 +102,7 @@ function getdata(){
     var date = document.getElementById("date");
     var mood = document.getElementById("mood");
     var trend = document.getElementById("trend");
+    console.log(trend.value);
 
     $.post("/add_purchase", 
     { 
