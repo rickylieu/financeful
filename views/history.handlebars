@@ -32,44 +32,102 @@
     </ul>
   </div>
 
+</div>
   <br>
   <br>
 
+      <div class = "container">
+      <label for="filter">Filter</label>
+      <select class="selectpicker" id = "filter_sel">
+        <option>item</option>
+        <option>category</option>
+        <option>price</option>
+        <option>date</option>
+        <option>mood</option>
+        <option>repurchase</option>
+      </select>
+
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for purchases..">
+      </div>
 
 
-
+      <div class = "container">
       <h1 id="history" style="color: white; font-size: 100%" align="center"> History </h1>
-      <div class="history_table" style="font-size: 10%">
-        <table class="new_table" align="center" style="font-size:10px" id="history_table"  >
-     <!-- <div class="elements" align=center style="font-size: 200%; color:black"> -->
+      <div class="table-responsive" style="font-size: 10%">
+        <table class="table" align="center" style="font-size:7px" id="my_table">
+
+        <thread>
       <tr>
-        <td> Item 
-        <td> Category ` 
-        <td> Price
-        <td> Date
-        <td> Mood
-        <td> Would Repurchase?
+        <td style ="word-break:break-all;">Item</td>
+        <td style ="word-break:break-all;">Category</td>
+        <td style ="word-break:break-all;">Price</td>
+        <td style ="word-break:break-all;">Date</td>
+        <td style ="word-break:break-all;">Mood</td>
+        <td style ="word-break:break-all;">Repurchase</td>
       </tr>
-      <br>
+      </thread>
+
 
       <div style="color:black">
+      <tbody>
       <tr>
         {{#each purchases}}
-         <td> {{item}} </td>
-         <td> {{category}} </td>
-         <td> {{price}} </td>  
-         <td>{{date}}</td> 
-         <td>{{mood}} </td>
-         <td>{{trend}} </td>
-        <br>
-      </tr>                 
-        {{/each}}
-      </tr>
+         <td style ="word-break:break-all;"> {{item}} </td>
+         <td style ="word-break:break-all;"> {{category}} </td>
+         <td style ="word-break:break-all;"> {{price}} </td>  
+         <td style ="word-break:break-all;">{{date}}</td> 
+         <td style ="word-break:break-all;">{{mood}} </td>
+         <td style ="word-break:break-all;">{{trend}} </td>   
+      </tr>       
+           {{/each}};  
+  
     </div>
-    </div>
+    </tbody>
+    </table>
+  </div>
+  </div>
 
 
 
+
+<script>
+function myFunction() {
+    var table, input_data, td, tr, i, j, element, filter, filter_index, num;
+    table = document.getElementById("my_table");
+    input_data = document.getElementById('myInput')
+    td = table.getElementsByTagName("td");
+    tr = table.getElementsByTagName("tr");
+    filter = input_data.value.toUpperCase();
+    filter_index = document.getElementById("filter_sel");
+    if (filter_index.value == "item") {
+      num = 0;
+    }
+    if (filter_index.value == "category") {
+      num = 1;
+    }
+    if (filter_index.value == "price") {
+      num = 2;
+    }
+    if (filter_index.value == "date") {
+      num = 3;
+    }
+    if (filter_index.value == "mood") {
+      num = 4;
+    }
+
+    console.log(filter_index.value);
+    for (i = 0; i < tr.length; i++) {
+            element = tr[i].getElementsByTagName("td")[num];
+            console.log(element);
+            if (element.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+    }       
+
+} 
+</script>
 
 
 </html>  
