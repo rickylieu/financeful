@@ -214,15 +214,15 @@
 
   </div>
   <br>
-   <div class="form-group" style="width:30%">
+   <div class="form-group" align="center" style="width:60%">
     <label for="exampleSelect1">Choose a category for your mood report!</label>
     <select class="form-control" id="mySelect">
         {{#each categories}}
           <option value={{category}}> {{category}}</option> 
         {{/each}}
     </select>
-  </div>
   <button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button>
+    </div>
   <script>
 function getdata(){
     var category = document.getElementById("mySelect");
