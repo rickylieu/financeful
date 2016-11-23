@@ -9,10 +9,24 @@ $(document).ready(function() {
 function initializePage() {
      console.log("Javascript connected!");
      $(".category").click(projectClick);
+     $("#history_button").click(historyButtonClick);
+     $("#history_link").click(historyLinkClick);
 
 
     
 }
+
+function historyButtonClick(e) {
+	console.log("history button clicked");
+	ga('send', 'event', 'history', 'click');
+}
+
+function historyLinkClick(e) {
+	console.log("history link clicked");
+	ga('send', 'event', 'history', 'click');
+
+}
+
 
 
 function projectClick(e) { 
