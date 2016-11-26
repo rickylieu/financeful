@@ -11,6 +11,7 @@ function initializePage() {
      $(".category").click(projectClick);
      $("#history_button").click(historyButtonClick);
      $("#history_link").click(historyLinkClick);
+    // $("#edit_history").click(editFormClick);
 
 
     
@@ -25,6 +26,11 @@ function historyLinkClick(e) {
 	console.log("history link clicked");
 	ga('send', 'event', 'history', 'click');
 
+}
+
+function editFormClick(e) {
+	console.log("edit_form clicked");
+	console.log(document.getElementById("edit_text").value);
 }
 
 

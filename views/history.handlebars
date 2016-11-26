@@ -70,7 +70,13 @@
       <div style="color:black">
       <tbody>
       <tr>
+
         {{#each purchases}}
+ 
+
+</div>
+
+      <tr>
          <td style ="word-break:break-all;"> {{item}} </td>
          <td style ="word-break:break-all;"> {{category}} </td>
          <td style ="word-break:break-all;"> {{price}} </td>  
@@ -87,8 +93,10 @@
   </div>
 <script>
 function editTable(clicked_id) {
-  var edit = document.getElementById(clicked_id);
-  console.log(clicked_id);
+ /* var edit = document.getElementById("edit_text");
+  var hidden = document.getElementById("hidden");
+  console.log($('#hidden').val());
+  console.log(edit.value);*/
 }
 
 

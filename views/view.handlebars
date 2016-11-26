@@ -74,13 +74,13 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       var food_mood_array = [];
       var categories=[];
       var moods =[];
-      var mood_count=new Array(6).join('0').split('').map(parseFloat);
-      var food_mood_count=new Array(6).join('0').split('').map(parseFloat);
+      var mood_count=new Array(100).join('0').split('').map(parseFloat);
+      var food_mood_count=new Array(100).join('0').split('').map(parseFloat);
       var trends = [];
-      var trend_count = new Array(6).join('0').split('').map(parseFloat);
+      var trend_count = new Array(100).join('0').split('').map(parseFloat);
       var trend_array = [];
 
-      var prices= new Array(5).join('0').split('').map(parseFloat);
+      var prices= new Array(100).join('0').split('').map(parseFloat);
 
       var a = 0;
       for(a = 0; a < prices.length; ++a) 
@@ -91,7 +91,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
       }
         $.getJSON("./data.json", function(data) { 
           //Categories chart
-          console.log(data);
+          //console.log(data);
           var i,j;
           for(i=0; i < data.categories.length; ++i) {
             categories[i] = data.categories[i].category;
@@ -118,7 +118,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
          for(i=0; i < data.trends.length; ++i) {
             trends[i] = data.trends[i].trend;
             for(j=0; j < data.purchases.length; ++j) {
-              console.log(data.purchases[j].trend);
+            //  console.log(data.purchases[j].trend);
               if(data.purchases[j].trend == trends[i] ) {
                 trend_count[i] = trend_count[i] + 1;
               }
@@ -144,6 +144,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
         trend_array[i+1] = [ trends[i], trend_count[i] ];
        // console.log(trends[i]);
        }
+       console.log(spending_array);
 
 
          google.charts.load('current', {'packages':['corechart']});
@@ -247,6 +248,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
           <option value={{category}}> {{category}}</option> 
         {{/each}}
     </select>
+
  <!-- <button type="submit" class="btn btn-primary" onclick = "getdata()">Submit</button> -->
     </div>
   <script>
@@ -254,9 +256,12 @@ function getdata(){
     var category = document.getElementById("mySelect");
     var category_array = [];
     var array = [];
+
   
    // var category_mood_count = [];
     $.getJSON("./data.json", function(data) { 
+          console.log("data moods");
+    console.log(data.moods.length);
         array =  [['Task', 'Hours per Day'],
           ['Work',     11],
           ['Eat',      2],
@@ -284,6 +289,7 @@ function getdata(){
          for(i=0; i < data.moods.length; ++i) {
           category_array[i+1] = [moods[i], category_mood_count[i]];
           console.log(category_array[i+1]);
+          //console.log(category_array[i+1]);
          }
           var data3 = google.visualization.arrayToDataTable(
           category_array
