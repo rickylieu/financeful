@@ -15,7 +15,14 @@ function initializePage() {
      $("#overall_mood").click(overallMoodClick);
      $("#category_mood").click(categoryMoodClick);
      $("#repurchase").click(repurchaseClick);
+       //  $("#piechart").toggle();
+
      $("#piechart").toggleClass("hidden");
+     $("#piechart2").toggleClass("hidden");
+     $("#piechart3").toggleClass("hidden");
+	$("#piechart3_form").toggleClass("hidden");	
+		$("#barchart_values").toggleClass("hidden");
+
        // $("#piechart").toggle();
 
 
@@ -28,6 +35,7 @@ function initializePage() {
 function spendingReportClick(e) {
 	e.preventDefault();
    // $("#piechart").hide();
+    $("#piechart").toggle();
     $("#piechart").toggleClass("hidden");
 }
 
@@ -36,19 +44,21 @@ function overallMoodClick(e) {
 	//console.log("mood");
     //$("#piechart2").hide();
     $("#piechart2").toggle();
+    $("#piechart2").toggleClass("hidden");
+
 }
 
 function categoryMoodClick(e) {
     e.preventDefault();
 	console.log("default");
-	$("#piechart3").toggle();
-	$("#piechart3_form").toggle();
+	$("#piechart3").toggleClass("hidden");
+	$("#piechart3_form").toggleClass("hidden");
 
 }
 
 function repurchaseClick(e) {
 	e.preventDefault();
-	$("#barchart_values").toggle();
+	$("#barchart_values").toggleClass("hidden");
 }
 
 

@@ -169,7 +169,10 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
         var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        chart1.draw(data1, options1);
+        $('#spending_report').click( function(e) {e.preventDefault();         chart1.draw(data1, options1);
+} );
+
+       // chart1.draw(data1, options1);
       };
 
         });
@@ -180,9 +183,9 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
              <a href id="spending_report">
              <h1 align="center" > Spending Report </h1> </a>
 
-         <div id="piechart" style="width: 100%; height: 50%;"></div>
+         <div id="piechart" style="width: 100%; height: 50%; display:block"></div>
 
-      <br>
+    
   
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -204,8 +207,10 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+       $('#overall_mood').click( function(e) {e.preventDefault();         chart.draw(data2, options);});
 
-        chart.draw(data2, options);
+
+       // chart.draw(data2, options);
       }
     </script>      
 
@@ -235,6 +240,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
+        $('#category_mood').click( function(e) {e.preventDefault();         chart.draw(data3, options);});
         chart.draw(data3, options);
       }
 
@@ -246,7 +252,6 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
    <div id="piechart3" style="width: 100%; height: 50%;"></div>
 
   </div>
-  <br>
    <div class="form-group" id="piechart3_form" align="center" style="width:95%">
     <label for="exampleSelect1" align="center">Choose a category for your mood report!</label>
     <select class="form-control" id="mySelect" onclick = "getdata()" align="center">
@@ -305,6 +310,7 @@ function getdata(){
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
 
+
         chart.draw(data3, options);
          
     });   
@@ -338,6 +344,9 @@ function getdata(){
         legend: { position: "none" },
       };
       var chart = new google.visualization.ColumnChart(document.getElementById("barchart_values"));
+
+      $('#repurchase').click( function(e) {e.preventDefault();         chart.draw(view, options);});
+
       chart.draw(view, options);
   }
   </script>
