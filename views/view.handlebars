@@ -177,11 +177,13 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
      
       </script>
       </div>
-             <h1 align="center" > Spending Report </h1>
+             <a href id="spending_report">
+             <h1 align="center" > Spending Report </h1> </a>
 
          <div id="piechart" style="width: 100%; height: 50%;"></div>
 
       <br>
+  
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -206,11 +208,13 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
         chart.draw(data2, options);
       }
     </script>      
+
   </div>
       
 
+               <a href id="overall_mood">
+  <h1 align="center" > Overall Mood Report </h1> </a>
 
-  <h1 align="center" > Overall Mood Report </h1>
      <div id="piechart2" style="width: 100%; height: 50%;"></div>
 
     <script type="text/javascript">
@@ -236,12 +240,14 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
     </script>   
 
-  <h1 align="center"> Mood Report Per Category</h1>
+  <a href id="category_mood">
+  <h1 align="center"> Mood Report Per Category</h1> </a>
+ 
    <div id="piechart3" style="width: 100%; height: 50%;"></div>
 
   </div>
   <br>
-   <div class="form-group" align="center" style="width:95%">
+   <div class="form-group" id="piechart3_form" align="center" style="width:95%">
     <label for="exampleSelect1" align="center">Choose a category for your mood report!</label>
     <select class="form-control" id="mySelect" onclick = "getdata()" align="center">
         {{#each categories}}
@@ -262,12 +268,7 @@ function getdata(){
     $.getJSON("./data.json", function(data) { 
           console.log("data moods");
     console.log(data.moods.length);
-        array =  [['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]]
+
        var category_mood_count=new Array(data.moods.length).join('0').split('').map(parseFloat);
         for(a = 0; a < data.moods.length; ++a) {
           category_mood_count[a] = 0;
@@ -340,7 +341,8 @@ function getdata(){
       chart.draw(view, options);
   }
   </script>
-    <h1 align="center"> My Willingness to Repurchase </h1>
+ <a href id="repurchase"> 
+    <h1 align="center"> Willing to Repurchase </h1> </a>
 <div id="barchart_values" align="left" style="width: 80%; height: 30%; text-align:left;"></div>
 
 

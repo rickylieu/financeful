@@ -11,11 +11,46 @@ function initializePage() {
      $(".category").click(projectClick);
      $("#history_button").click(historyButtonClick);
      $("#history_link").click(historyLinkClick);
+     $("#spending_report").click(spendingReportClick);
+     $("#overall_mood").click(overallMoodClick);
+     $("#category_mood").click(categoryMoodClick);
+     $("#repurchase").click(repurchaseClick);
+     $("#piechart").toggleClass("hidden");
+       // $("#piechart").toggle();
+
+
     // $("#edit_history").click(editFormClick);
 
 
     
 }
+
+function spendingReportClick(e) {
+	e.preventDefault();
+   // $("#piechart").hide();
+    $("#piechart").toggleClass("hidden");
+}
+
+function overallMoodClick(e) {
+	e.preventDefault();
+	//console.log("mood");
+    //$("#piechart2").hide();
+    $("#piechart2").toggle();
+}
+
+function categoryMoodClick(e) {
+    e.preventDefault();
+	console.log("default");
+	$("#piechart3").toggle();
+	$("#piechart3_form").toggle();
+
+}
+
+function repurchaseClick(e) {
+	e.preventDefault();
+	$("#barchart_values").toggle();
+}
+
 
 function historyButtonClick(e) {
 	console.log("history button clicked");
