@@ -46,7 +46,7 @@
             "price": "7",
             "date": "2016-11-17",
             "mood": "Satisfied",
-            "trend": "Definitely"
+            "trend": "Yes"
         },
         {
             "item": "DisneyLand",
@@ -85,6 +85,9 @@
     "trends": [
         {
             "trend": "Definitely"
+        },
+        {
+            "trend": "Yes"
         },
         {
             "trend": "Not Sure"
