@@ -53,6 +53,7 @@ exports.addmood = function(req, res) {
 }
 
 exports.removemood = function(req, res) {
+  console.log(req.body.mood);
   deletemood(req.body.mood);
 }
 

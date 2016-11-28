@@ -73,7 +73,7 @@
     <br>
     <select class="form-control" id="mymood">
         {{#each moods}}
-          <option value={{category}}> {{mood}}</option> 
+          <option value={{mood}}> {{mood}}</option> 
         {{/each}}
     </select>
   </div>
@@ -114,7 +114,7 @@
             { 
               "mood": data.value
             }, 
-            function(data) {
+            function(data) { console.log("removed mood");
             })};
 
         function addmood(){
