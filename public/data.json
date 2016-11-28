@@ -63,6 +63,14 @@
             "date": "2016-12-25",
             "mood": "Happy",
             "trend": "Definitely"
+        },
+        {
+            "item": "Water",
+            "category": "Food",
+            "price": "2.00",
+            "date": "2016-11-16",
+            "mood": "Happy",
+            "trend": "Definitely"
         }
     ],
     "categories": [
