@@ -198,12 +198,12 @@ input[type="password"] {
 .bgSizeContain {
   font-size: 50px;
   background-image: url("../44");
-  height:  500px;
-  width:  400px;
+  height:  100%;
+  width:  auto;
 }
 
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
-    background-color: #d62620 !important;
+    background-color: #d62620
 }
 header,.header,#header{
   background: red;
