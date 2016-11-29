@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
 }
 .jumbotron{
-  background-color: #C0C0C0 !important;
+  background: linear-gradient(to bottom right, #83a4d4, #b6fbff) !important;
 }
 /*.jumbotron p {
 	text-align: center;
