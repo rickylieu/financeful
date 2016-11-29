@@ -2,8 +2,8 @@ html,
 body {
   font-family: 'Roboto', sans-serif;
   background-image: url("public/css/1");	
-	width: 90%;
-	height: 70%;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 }
 
@@ -200,8 +200,8 @@ input[type="password"] {
 .bgSizeContain {
   font-size: 50px;
   background-image: url("../44");
-  height:  500px;
-  width:  400px;
+  height:  100%;
+  width:  auto;
 }
 /*.jumbotron p {
 	text-align: center;
