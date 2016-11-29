@@ -205,7 +205,7 @@ input[type="password"] {
 }
 
 .btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited {
-    background-color: #d62620 !important;
+    background-color: #d62620
 }
 /*.jumbotron p {
 	text-align: center;
