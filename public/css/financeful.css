@@ -199,7 +199,7 @@ input[type="password"] {
   font-size: 50px;
   background-image: url("../44");
   height:  650px;
-  width: 412px;
+  width: 685px;
   margin-left: -15px;
   background-size: cover;
 }
@@ -214,10 +214,13 @@ header,.header,#header{
 }
 h1, h2, h3, h4, h5, h6 {
         text-align: center;
+        font-size: 15px;
 }
 .jumbotron{
   background: linear-gradient(to bottom right, #c0c0aa, #1ce);
+
 }
+
 /*.jumbotron p {
 	text-align: center;
 	background-color: red;
